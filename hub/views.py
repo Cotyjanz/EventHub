@@ -31,18 +31,18 @@ from hub.models import *
 
 # Create your views here.
 def DIY_index(request):
-     template = loader.get_template('index.html')
+     template = loader.get_template('hub/index.html')
      return HttpResponse(template.render())
 
 def DIY_signup(request):
-    template = loader.get_template('signup.html')
+    template = loader.get_template('hub/signup.html')
     return HttpResponse(template.render())
 
 def DIY_user_page(request):
-    template = loader.get_template('user_page.html')
+    template = loader.get_template('hub/user_page.html')
     return HttpResponse(template.render())
 
 def DIY_create(request):
-    template = loader.get_template('create.html')
+    template = loader.get_template('hub/create.html')
     return HttpResponse(template.render())
      

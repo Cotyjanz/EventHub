@@ -729,7 +729,7 @@ Banner Style
 */
 
 .main-banner {
-  background-image: url(/static/images/banner-bg.jpg);
+  background-image: url(/static/hub/images/banner-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -814,7 +814,7 @@ Categories & Collections Style
 */
 
 .categories-collections {
-  background-image: url(/static/images/dark-bg.jpg); 
+  background-image: url(/static/hub/images/dark-bg.jpg); 
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -823,7 +823,7 @@ Categories & Collections Style
 }
 
 .categories-collections:after {
-  background-image: url(/static/images/category-collection-dec.png);
+  background-image: url(/static/hub/images/category-collection-dec.png);
   width: 300px;
   height: 282px;
   position: absolute;
@@ -993,7 +993,7 @@ Create NFT Style
 */
 
 .create-nft {
-  background-image: url(/static/images/main-bg.jpg);
+  background-image: url(/static/hub/images/main-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1089,7 +1089,7 @@ Currently Market Style
 */
 
 .currently-market {
-  background-image: url(/static/images/dark-bg.jpg);
+  background-image: url(/static/hub/images/dark-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1262,7 +1262,7 @@ Page Heading Style
 }
 
 .page-heading {
-  background-image: url(/static/images/heading-bg.jpg);
+  background-image: url(/static/hub/images/heading-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1417,7 +1417,7 @@ Explore Style
 }
 
 .discover-items {
-  background-image: url(/static/images/dark-bg.jpg);
+  background-image: url(/static/hub/images/dark-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1572,7 +1572,7 @@ Explore Style
 }
 
 .top-seller {
-  background-image: url(/static/images/main-bg.jpg);
+  background-image: url(/static/hub/images/main-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1622,7 +1622,7 @@ Details Page Style
 */
 
 .item-details-page {
-  background-image: url(/static/images/dark-bg.jpg);
+  background-image: url(/static/hub/images/dark-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1631,7 +1631,7 @@ Details Page Style
 }
 
 .item-details-page:after {
-  background-image: url(/static/images/category-collection-dec.png);
+  background-image: url(/static/hub/images/category-collection-dec.png);
   width: 300px;
   height: 282px;
   position: absolute;
@@ -1856,7 +1856,7 @@ Author Page Style
 */
 
 .author-page {
-  background-image: url(/static/images/dark-bg.jpg);
+  background-image: url(/static/hub/images/dark-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

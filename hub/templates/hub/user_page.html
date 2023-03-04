@@ -9,18 +9,18 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <title>Create Event</title>
+    <title>User Page</title>
 
     <!-- Bootstrap core CSS -->
     {%load static%}
-    <link href="{%static 'bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{%static 'hub/bootstrap.min.css' %}" rel="stylesheet">
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{%static 'fontawesome.css' %}">
-    <link rel="stylesheet" href="{%static 'templatemo-liberty-market.css' %}">
-    <link rel="stylesheet" href="{%static 'owl.css' %}">
-    <link rel="stylesheet" href="{%static 'animate.css' %}">
+    <link rel="stylesheet" href="{%static 'hub/fontawesome.css' %}">
+    <link rel="stylesheet" href="{%static 'hub/templatemo-liberty-market.css' %}">
+    <link rel="stylesheet" href="{%static 'hub/owl.css' %}">
+    <link rel="stylesheet" href="{%static 'hub/animate.css' %}">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 <!--
 
@@ -53,15 +53,15 @@ https://templatemo.com/tm-577-liberty-market
           <div class="col-12">
               <nav class="main-nav">
                   <!-- ***** Logo Start ***** -->
-                  <a href="#" class="logo">
-                      <img src="{%static 'images/DIY_2.png' %}" alt="DIY EVENT HUB">
+                  <a href="/DIY_user_page" class="logo">
+                      <img src="{%static 'hub/images/DIY_2.png' %}" alt="DIY EVENT HUB">
                   </a>
                   <!-- ***** Logo End ***** -->
                   <!-- ***** Menu Start ***** -->
                   <ul class="nav">
                     <!-- <li><a href="index.html" class="active">Home</a></li> -->
-                      <li><button><a href="/DIY_user_page">Home </a></button></li>
-                      <li > <a href="#">User Email </a></li>
+                      <li><button><a href="/DIY_create">Create Event</a></button></li>
+                      <li><button><a href="#">User Email </a></button></li>
                       <li><button><a href="/DIY_index">Logout</a></button></li>
                   </ul>   
                   <!-- <a class='menu-trigger'>
@@ -75,18 +75,18 @@ https://templatemo.com/tm-577-liberty-market
   </header>
   <!-- ***** Header Area End ***** -->
 
-   <div class="page-heading">
-   <!--<div class="container">
+  <div class="page-heading">
+     <!-- <div class="container">
       <div class="row">
-       <div class="col-lg-12">
+        <div class="col-lg-12">
           <h6>Liberty NFT Market</h6>
           <h2>Discover Some Top Items</h2>
           <span>Home > <a href="#">Explore</a></span>
         </div>
       </div>
-    </div> 
+    </div>  -->
     
-    <div class="featured-explore">
+    <div class="featured-explore"> 
       <div class="slider-header" style=" position:relative; right: 35%;" > <h1> Upcomming Events</h1></div>
       <br>
       <div class="container-fluid">
@@ -97,60 +97,64 @@ https://templatemo.com/tm-577-liberty-market
             <div class="owl-features owl-carousel">
               <div class="item">
                 <div class="thumb">
-                  <img src="{%static images/featured-01.jpg" alt="" style="border-radius: 20px;">
+                  <img src="{%static 'hub/images/featured-01.jpg' %}" alt="" style="border-radius: 20px;">
                   <div class="hover-effect">
                     <div class="content">
                       <h4>Current Event 1</h4>
                       <p>Title</p>
+                      <p>Description</p>
                       <p>Date</p>
                       <p>Time</p>
                       <p>Views</p>
-                      <p>Link</p>
+                      <a href='#'>Link</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="thumb">
-                  <img src="{%static images/featured-02.jpg" alt="" style="border-radius: 20px;">
+                  <img src="{%static 'hub/images/featured-02.jpg' %}" alt="" style="border-radius: 20px;">
                   <div class="hover-effect">
                     <div class="content">
                       <h4>Current Event 2</h4>
                       <p>Title</p>
+                      <p>Description</p>
                       <p>Date</p>
                       <p>Time</p>
                       <p>Views</p>
-                      <p>Link</p>
+                      <a href='#'>Link</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="thumb">
-                  <img src="{%static images/featured-03.jpg" alt="" style="border-radius: 20px;">
+                  <img src="{%static 'hub/images/featured-03.jpg' %}" alt="" style="border-radius: 20px;">
                   <div class="hover-effect">
                     <div class="content">
                       <h4>Current Event 3</h4>
                       <p>Title</p>
+                      <p>Description</p>
                       <p>Date</p>
                       <p>Time</p>
                       <p>Views</p>
-                      <p>Link</p>
+                      <a href='#'>Link</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="thumb">
-                  <img src="{%static images/featured-04.jpg" alt="" style="border-radius: 20px;">
+                  <img src="{%static 'hub/images/featured-04.jpg' %}" alt="" style="border-radius: 20px;">
                   <div class="hover-effect">
                     <div class="content">
                       <h4>Current Event 4</h4>
                       <p>Title</p>
+                      <p>Description</p>
                       <p>Date</p>
                       <p>Time</p>
                       <p>Views</p>
-                      <p>Link</p>
+                      <a href='#'>Link</a>
                     </div>
                   </div>
                 </div> 
@@ -172,60 +176,64 @@ https://templatemo.com/tm-577-liberty-market
             <div class="owl-features owl-carousel">
               <div class="item">
                 <div class="thumb">
-                  <img src="{%static images/featured-01.jpg" alt="" style="border-radius: 20px;">
+                  <img src="{%static 'hub/images/featured-01.jpg' %}" alt="" style="border-radius: 20px;">
                   <div class="hover-effect">
                     <div class="content">
                       <h4>Current Event 1</h4>
                       <p>Title</p>
+                      <p>Description</p>
                       <p>Date</p>
                       <p>Time</p>
                       <p>Views</p>
-                      <p>Link</p>
+                      <a href='#'>Link</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="thumb">
-                  <img src="{%static images/featured-02.jpg" alt="" style="border-radius: 20px;">
+                  <img src="{%static 'hub/images/featured-02.jpg' %}" alt="" style="border-radius: 20px;">
                   <div class="hover-effect">
                     <div class="content">
                       <h4>Current Event 2</h4>
                       <p>Title</p>
+                      <p>Description</p>
                       <p>Date</p>
                       <p>Time</p>
                       <p>Views</p>
-                      <p>Link</p>
+                      <a href='#'>Link</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="thumb">
-                  <img src="{%static images/featured-03.jpg" alt="" style="border-radius: 20px;">
+                  <img src="{%static 'hub/images/featured-03.jpg' %}" alt="" style="border-radius: 20px;">
                   <div class="hover-effect">
                     <div class="content">
                       <h4>Current Event 3</h4>
                       <p>Title</p>
+                      <p>Description</p>
                       <p>Date</p>
                       <p>Time</p>
                       <p>Views</p>
-                      <p>Link</p>
+                      <a href='#'>Link</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="thumb">
-                  <img src="{%static images/featured-04.jpg" alt="" style="border-radius: 20px;">
+                  <img src="{%static 'hub/images/featured-04.jpg' %}" alt="" style="border-radius: 20px;">
                   <div class="hover-effect">
                     <div class="content">
                       <h4>Current Event 4</h4>
                       <p>Title</p>
+                      <p>Description</p>
                       <p>Date</p>
                       <p>Time</p>
                       <p>Views</p>
-                      <p>Link</p>
+                      <a href='#'>Link</a>
                     </div>
                   </div>
                 </div>   
@@ -234,8 +242,8 @@ https://templatemo.com/tm-577-liberty-market
           </div>
         </div>
       </div> 
-    </div>-->
-  </div> 
+    </div>  
+  </div>
   
   <!-- <div class="discover-items">
     <div class="container">
@@ -291,16 +299,16 @@ https://templatemo.com/tm-577-liberty-market
               </div>
               <div class="col-lg-6 col-sm-6">
                 <span class="author">
-                  <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                  <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 </span>
-                <img src="{%static images/discover-01.jpg" alt="" style="border-radius: 20px;">
+                <img src="{%static 'images/discover-01.jpg" alt="" style="border-radius: 20px;">
                 <h4>Mutant Ape Bored</h4>
               </div>
               <div class="col-lg-6 col-sm-6">
                 <span class="author">
-                  <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                  <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 </span>
-                <img src="{%static images/discover-02.jpg" alt="" style="border-radius: 20px;">
+                <img src="{%static 'images/discover-02.jpg" alt="" style="border-radius: 20px;">
                 <h4>His Other Half</h4>
               </div>
               <div class="col-lg-12">
@@ -333,9 +341,9 @@ https://templatemo.com/tm-577-liberty-market
             <div class="row">
               <div class="col-lg-12">
                 <span class="author">
-                  <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                  <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 </span>
-                <img src="{%static images/discover-03.jpg" alt="" style="border-radius: 20px;">
+                <img src="{%static 'images/discover-03.jpg" alt="" style="border-radius: 20px;">
                 <h4>Genesis Meta Boom</h4>
               </div>
               <div class="col-lg-12">
@@ -362,9 +370,9 @@ https://templatemo.com/tm-577-liberty-market
             <div class="row">
               <div class="col-lg-12">
                 <span class="author">
-                  <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                  <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 </span>
-                <img src="{%static images/discover-04.jpg" alt="" style="border-radius: 20px;">
+                <img src="{%static 'images/discover-04.jpg" alt="" style="border-radius: 20px;">
                 <h4>Another Half Ape</h4>
               </div>
               <div class="col-lg-12">
@@ -391,9 +399,9 @@ https://templatemo.com/tm-577-liberty-market
             <div class="row">
               <div class="col-lg-12">
                 <span class="author">
-                  <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                  <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 </span>
-                <img src="{%static images/discover-03.jpg" alt="" style="border-radius: 20px;">
+                <img src="{%static 'images/discover-03.jpg" alt="" style="border-radius: 20px;">
                 <h4>Pixel Sand Box</h4>
               </div>
               <div class="col-lg-12">
@@ -420,9 +428,9 @@ https://templatemo.com/tm-577-liberty-market
             <div class="row">
               <div class="col-lg-12">
                 <span class="author">
-                  <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                  <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 </span>
-                <img src="{%static images/discover-04.jpg" alt="" style="border-radius: 20px;">
+                <img src="{%static 'images/discover-04.jpg" alt="" style="border-radius: 20px;">
                 <h4>Another Half Ape</h4>
               </div>
               <div class="col-lg-12">
@@ -449,9 +457,9 @@ https://templatemo.com/tm-577-liberty-market
             <div class="row">
               <div class="col-lg-12">
                 <span class="author">
-                  <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                  <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 </span>
-                <img src="{%static images/discover-06.jpg" alt="" style="border-radius: 20px;">
+                <img src="{%static 'images/discover-06.jpg" alt="" style="border-radius: 20px;">
                 <h4>Invisible NFT Land</h4>
               </div>
               <div class="col-lg-12">
@@ -478,9 +486,9 @@ https://templatemo.com/tm-577-liberty-market
             <div class="row">
               <div class="col-lg-12">
                 <span class="author">
-                  <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                  <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 </span>
-                <img src="{%static images/discover-05.jpg" alt="" style="border-radius: 20px;">
+                <img src="{%static 'images/discover-05.jpg" alt="" style="border-radius: 20px;">
                 <h4>Another Half Ape</h4>
               </div>
               <div class="col-lg-12">
@@ -520,21 +528,21 @@ https://templatemo.com/tm-577-liberty-market
             <div class="col-lg-12">
               <div class="item">
                 <h4>1.</h4>
-                <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>NFT Top Artist<br><a href="#">8.6 ETH or $12,000</a></h6>
               </div>
             </div>
             <div class="col-lg-12">
               <div class="item">
                 <h4>2.</h4>
-                <img src="{%static images/author-02.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author-02.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>George Brandon<br><a href="#">4.8 ETH or $14,000</a></h6>
               </div>
             </div>
             <div class="col-lg-12">
               <div class="item">
                 <h4>3.</h4>
-                <img src="{%static images/author-03.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author-03.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>Johnny Mayson<br><a href="#">6.2 ETH or $26,000</a></h6>
               </div>
             </div>
@@ -545,21 +553,21 @@ https://templatemo.com/tm-577-liberty-market
             <div class="col-lg-12">
               <div class="item">
                 <h4>4.</h4>
-                <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>Liberty Artist<br><a href="#">4.5 ETH or $11,600</a></h6>
               </div>
             </div>
             <div class="col-lg-12">
               <div class="item">
                 <h4>5.</h4>
-                <img src="{%static images/author-02.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author-02.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>Ronald Martino<br><a href="#">7.2 ETH or $14,500</a></h6>
               </div>
             </div>
             <div class="col-lg-12">
               <div class="item">
                 <h4>6.</h4>
-                <img src="{%static images/author-03.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author-03.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>Anthony Brown<br><a href="#">8.6 ETH or $7,400</a></h6>
               </div>
             </div>
@@ -570,21 +578,21 @@ https://templatemo.com/tm-577-liberty-market
             <div class="col-lg-12">
               <div class="item">
                 <h4>7.</h4>
-                <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>Liberty Artist<br><a href="#">9.8 ETH or $14,200</a></h6>
               </div>
             </div>
             <div class="col-lg-12">
               <div class="item">
                 <h4>8.</h4>
-                <img src="{%static images/author-02.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author-02.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>Ronald Martino<br><a href="#">6.5 ETH or $15,000</a></h6>
               </div>
             </div>
             <div class="col-lg-12">
               <div class="item">
                 <h4>9.</h4>
-                <img src="{%static images/author-03.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author-03.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>David Walker<br><a href="#">2.5 ETH or $12,000</a></h6>
               </div>
             </div>
@@ -595,21 +603,21 @@ https://templatemo.com/tm-577-liberty-market
             <div class="col-lg-12">
               <div class="item">
                 <h4>10.</h4>
-                <img src="{%static images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>Liberty Artist<br><a href="#">8.8 ETH or $16,800</a></h6>
               </div>
             </div>
             <div class="col-lg-12">
               <div class="item">
                 <h4>11.</h4>
-                <img src="{%static images/author-02.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author-02.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>Anthony Brown<br><a href="#">7.5 ETH or $15,400</a></h6>
               </div>
             </div>
             <div class="col-lg-12">
               <div class="item">
                 <h4>12.</h4>
-                <img src="{%static images/author-03.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                <img src="{%static 'images/author-03.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 <h6>David Walker<br><a href="#">5.2 ETH or $12,300</a></h6>
               </div>
             </div>
@@ -619,28 +627,29 @@ https://templatemo.com/tm-577-liberty-market
     </div>
   </div> -->
 
-   <footer>
+  <!-- <footer>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2022 <a href="/DIY_index">DIY EVENT HUB </a>
-          <a title="DIY EVENT HUB" rel="sponsored" href="/DIY_index" target="_blank"></a></p>
+          <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+          &nbsp;&nbsp;
+          Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
         </div>
       </div>
     </div>
-  </footer> 
+  </footer> -->
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-  <script src="{%static 'js/jquery.min.js' %}"></script>
-  <script src="{%static 'js/bootstrap.min.js' %}"></script>
+  <script src="{%static 'hub/js/jquery.min.js' %}"></script>
+  <script src="{%static 'hub/js/bootstrap.min.js' %}"></script>
 
-  <script src="{%static 'js/isotope.min.js' %}"></script>
-  <script src="{%static 'js/owl-carousel.js' %}"></script>
+  <script src="{%static 'hub/js/isotope.min.js' %}"></script>
+  <script src="{%static 'hub/js/owl-carousel.js' %}"></script>
 
-  <script src="{%static 'js/tabs.js' %}"></script>
-  <script src="{%static 'js/popup.js' %}"></script>
-  <script src="{%static 'js/custom.js' %}"></script>
+  <script src="{%static 'hub/js/tabs.js' %}"></script>
+  <script src="{%static 'hub/js/popup.js' %}"></script>
+  <script src="{%static 'hub/js/custom.js' %}"></script>
 
  
   </body>
