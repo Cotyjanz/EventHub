@@ -14,7 +14,6 @@ class EventDetails(models.Model):
    title = models.CharField(max_length=255)
    description = models.TextField(max_length=255)
    Location = models.CharField(max_length=255)
-   link = models.CharField(max_length=255)
    date = models.DateField()
    time = models.TimeField()
    Is_public = models.BooleanField(null= True)
