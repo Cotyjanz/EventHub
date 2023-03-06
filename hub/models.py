@@ -8,7 +8,7 @@ class UserDetails(models.Model):
    email = models.EmailField(max_length=255)
    password = models.CharField(max_length=255)
 
- 
+   
 class EventDetails(models.Model):
    event_id = models.AutoField(primary_key= True)    
    u_id = models.ForeignKey(UserDetails, on_delete = models.CASCADE)
@@ -18,9 +18,8 @@ class EventDetails(models.Model):
    link = models.CharField(max_length=255)
    date = models.DateField()
    time = models.TimeField()
+   Is_public = models.BooleanField(null= True)
+   Is_rsvp = models.BooleanField(null=True)
 
+   
 
-class GuestDetails(models.Model):
-   g_id = models.AutoField(primary_key=True)
-   e_id = models.ForeignKey(EventDetails,on_delete = models.CASCADE)
-   Is_rsvp = models.BooleanField()
