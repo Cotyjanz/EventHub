@@ -10,7 +10,7 @@ from hub.models import *
 def DIY_index(request):
  	#public_events = EventDetails.objects.all()
  	# This query cannot be tested until the django admin is setup
- 	public_events = EventDetails.objects.all().order_by('-event_id')[:10]
+ 	public_events = EventDetails.objects.all().filter(Is_public=True).order_by('-event_id')[:10]
  	context = {
  		'events' : public_events
  	}

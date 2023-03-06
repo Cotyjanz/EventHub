@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     {% load static %}
+
     <link href="{%static 'hub/bootstrap.min.css' %}" rel="stylesheet">
 
 
@@ -74,16 +75,6 @@
             <p>Whether you need an experiential event, a star-studded gala with big-name talent, or a corporate conference, DIY Event Hub can execute your vision to perfection..</p>
           </div>
         </div>
-        <!-- <div class="col-lg-5 offset-lg-1">
-          <div class="owl-banner owl-carousel">
-            <div class="item">
-              <img src="{%static images/banner-01.png" alt="">
-            </div>
-            <div class="item">
-              <img src="{%static images/banner-02.png" alt="">
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
@@ -101,62 +92,30 @@
                   <h2> PUBLIC EVENTS </h2>
                 </div>
               </div>
-              <div class="col-lg-2 col-sm-6">
-                <div class="item">
-                  <div class="icon">
-                    <img src="{%static 'hub/images/icon-01.png' %}" alt="">
-                  </div>
-                  <h4>Concerts</h4>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-angle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-6">
-                <div class="item">
-                  <div class="icon">
-                    <img src="{%static 'hub/images/icon-02.png' %}" alt="">
-                  </div>
-                  <h4>Summer Beach Party </h4>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-angle-right"></i></a>
+
+
+              <!-- Card layout for event previews - CJ -->
+              <!-- Images and text colour still need to be dealt with -->
+
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+              <!-- card layout begins -->
+              {% for EventDetails in events %}
+                <div class="col-md-4">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ EventDetails.title }}</h5>
+                      <p class="card-text">{{ EventDetails.description }}
+                        <p> {{ EventDetails.date }} {{ EventDetails.time }}</p></p>
+                      <a href="{% url 'event_detail' EventDetails.event_id %}" class="btn btn-primary">View Now</a>
+                    </div>
                   </div>
                 </div>
+              {% endfor %}
+              <!-- card layout ends -->
               </div>
-              <div class="col-lg-2 col-sm-6">
-                <div class="item">
-                  <div class="icon">
-                    <img src="{%static 'hub/images/icon-03.png' %}" alt="">
-                  </div>
-                  <h4>Canada Day Calebration </h4>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-angle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-6">
-                <div class="item">
-                  <div class="icon">
-                    <img src="{%static 'hub/images/icon-04.png' %}" alt="">
-                  </div>
-                  <h4>Regina Premier League </h4>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-angle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-6">
-                <div class="item">
-                  <div class="icon">
-                    <img src="{%static 'hub/images/icon-05.png' %}" alt="">
-                  </div>
-                  <h4>Fashion Expo </h4>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-angle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+ 
           </div>
         </div>
       </div>

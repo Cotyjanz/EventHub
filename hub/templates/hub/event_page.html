@@ -7,6 +7,17 @@
 </head>
 
 <body>
+	<!-- These paragraphs are for debugging -->
+	<p> This is a template page, pulling from EventDetails model:</p>
+	<p> {{event.event_id}}</p>
+	<p> {{event.title}} </p>
+	<p> {{event.description}}</p>
+	<p> {{event.Location}}</p>
+	<p> {{event.date}} {{event.time}}</p>
+	<P> {{event.Is_public}}</P>
+
+
+	<!-- Normal code continutes here -->
 	{% block content %}
 	{% endblock %}
 </body>
