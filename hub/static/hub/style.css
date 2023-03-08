@@ -17,11 +17,11 @@ main {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background-color: #ff8c6b;
   padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(/static/hub/images/banner-bg.jpg);
 }
 
 .box {
@@ -73,21 +73,25 @@ form.sign-up-form {
   pointer-events: none;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
 
 .logo img {
   width: 27px;
-  margin-right: 0.3rem;
+  margin-block-start: 0%;
+  margin-inline-start: 10%;
 }
-
+.Error_Msg{
+  color: #ff8c6b;
+  padding: 1%;
+  margin-top: 30%;
+}
+.login_labels{
+  margin-block-start: 5%;
+}
 .logo h4 {
-  font-size: 1.1rem;
-  margin-top: -9px;
+  font-size: 1.5rem;
+  margin-left: 10%;
   letter-spacing: -0.5px;
-  color: #151111;
+  color: #201e1e;
 }
 
 .heading h2 {
@@ -97,7 +101,7 @@ form.sign-up-form {
 }
 
 .heading h6 {
-  color: #bababa;
+  color: #f01414;
   font-weight: 400;
   font-size: 0.75rem;
   display: inline;
@@ -106,7 +110,7 @@ form.sign-up-form {
 .toggle {
   color: #151111;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   font-weight: 500;
   transition: 0.3s;
 }
@@ -136,14 +140,9 @@ form.sign-up-form {
 }
 
 label {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.95rem;
-  color: #bbb;
-  pointer-events: none;
-  transition: 0.4s;
+  position:relative;
+  font-size: 1.00rem;
+  color: #080808;
 }
 
 .input-field.active {
@@ -305,12 +304,12 @@ main.sign-up-mode .carousel {
 @media (max-width: 850px) {
   .box {
     height: auto;
-    max-width: 550px;
+    max-width: 650px;
     overflow: hidden;
   }
 
   .inner-box {
-    position: static;
+    position:relative;
     transform: none;
     width: revert;
     height: revert;
