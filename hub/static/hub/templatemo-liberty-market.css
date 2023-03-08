@@ -93,7 +93,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0px;
   margin-bottom: 0px;
-  color: #fff;
+  color: #000;
   font-weight: 700;
 }
 
@@ -103,8 +103,8 @@ ul {
 
 p {
   font-size: 15px;
-  line-height: 30px;
-  color: #fff;
+  line-height: 20px;
+  color: #000;
 }
 
 img {
