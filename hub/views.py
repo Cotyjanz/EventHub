@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.template import loader
 
-from hub.models import UserDetails
 from django.contrib import messages
 from django.contrib.auth import login
 from django.shortcuts import redirect, render
@@ -55,12 +54,8 @@ def register(request):
             return render(request, 'registration/register.html', context)
 
 def DIY_user_page(request):
-    usr = UserDetails.objects.all()
-    template = loader.get_template('hub/user_page.html')
-    context = {
-    'usrdata': usr,
-  }
-    return HttpResponse(template.render(context,request))
+ template = loader.get_template('hub/user_page.html')
+ return HttpResponse(template.render())
 
 def DIY_create(request):
     template = loader.get_template('hub/create.html')
