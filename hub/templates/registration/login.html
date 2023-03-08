@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in & Sign up Form</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'hub/style.css' %}" />
+  </head>
+  <body>
+    <main>
+        <div class="box">
+            <div class="inner-box">
+                <div class="logo">
+                    <img src="{%static 'hub/images/logo.png' %}" alt="DIY EVENT HUB"/>
+                    <h4>DIY EVENT HUB</h4>
+                  </div>
+                <div class="forms-wrap">
+                    <form  method="POST">
+                        {% csrf_token %}
+                        <div class="login-form" >
+                          <div class="Error_Msg">
+                                {% if user.is_valid %}
+                                {% else %}
+                                  <p>Invalid Credentials</p>
+                                {% endif %}
+                          </div>
+                            <div>
+                                <label class="login_labels">Username<br></label>
+                                {{form.username}}
+                            </div>
+                            <div>
+                                <br>
+                            </div>
+                            <div>
+                                <label class="login_labels">Password<br></label>
+                                {{form.password}}
+                            </div>
+                            <div>
+                                <br>
+                            </div>
+                            <div ><br>
+                                <button type="submit" class="sign-btn">Login</button>
+                            </div>
+                            <div >
+                                <p >Don't have an account ?<a href="{% url 'register' %}" class="toggle">Sign Up</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="carousel">
+                    <div class="images-wrapper">
+                      <img src="{%static 'hub/images/image1.png' %}" class="image img-1 show" alt="" />
+                      <img src="{%static 'hub/images/image2.png' %}" class="image img-2" alt="" />
+                      <img src="{%static 'hub/images/image3.png' %}" class="image img-3" alt="" />
+                    </div>
+        
+                    <div class="text-slider">
+                      <div class="text-wrap">
+                        <div class="text-group">
+                          <h2>Create your special moments</h2>
+                          <h2>Customize your ecents</h2>
+                          <h2>Invite more people through us</h2>
+                        </div>
+                      </div>
+        
+                      <div class="bullets">
+                        <span class="active" data-value="1"></span>
+                        <span data-value="2"></span>
+                        <span data-value="3"></span>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </main>
+    <script src="{%static 'hub/js/app.js' %}"></script>
+</body>
+</html>
+
