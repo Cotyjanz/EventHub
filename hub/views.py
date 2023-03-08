@@ -40,18 +40,18 @@ def DIY_signup(request):
     return HttpResponse(template.render())
   
 def register(request):
- if request.method == "GET":
-      return render(request, "registration/register.html",{"form": RegisterForm})
-    elif request.method == "POST":
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect(reverse("DIY_index"))
-        else:
-            messages.error(request, 'Error Processing Your Request')
-            context = {'form': form}
-            return render(request, 'registration/register.html', context)
+	if request.method == "GET":
+		return render(request, "registration/register.html",{"form": RegisterForm})
+	elif request.method == "POST":
+		form = RegisterForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			return redirect(reverse("DIY_index"))
+		else:
+			messages.error(request, 'Error Processing Your Request')
+			context = {'form': form}
+			return render(request, 'registration/register.html', context)
 
 def DIY_user_page(request):
  template = loader.get_template('hub/user_page.html')
