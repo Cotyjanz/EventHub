@@ -31,10 +31,28 @@ def event_detail(request, primary_key):
 def DIY_signup(request):
     template = loader.get_template('hub/signup.html')
     return HttpResponse(template.render())
+  
+def register(request):
+ if request.method == "GET":
+      return render(request, "registration/register.html",{"form": RegisterForm})
+    elif request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect(reverse("DIY_index"))
+        else:
+            messages.error(request, 'Error Processing Your Request')
+            context = {'form': form}
+            return render(request, 'registration/register.html', context)
 
 def DIY_user_page(request):
+    usr = UserDetails.objects.all()
     template = loader.get_template('hub/user_page.html')
-    return HttpResponse(template.render())
+    context = {
+    'usrdata': usr,
+  }
+    return HttpResponse(template.render(context,request))
 
 def DIY_create(request):
     template = loader.get_template('hub/create.html')
