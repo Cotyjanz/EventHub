@@ -35,6 +35,9 @@ def event_detail(request, primary_key):
  	#   be choosen by the user
  	return render(request, 'hub/event_page.html', context)
 
+# def event_submit(request);
+
+
 def DIY_signup(request):
     template = loader.get_template('hub/signup.html')
     return HttpResponse(template.render())
