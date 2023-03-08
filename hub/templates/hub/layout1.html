@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="author" content="templatemo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Create Event</title>
+
+    <!-- Bootstrap core CSS -->
+    {%load static%}
+    <link href="{%static 'hub/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{%static 'hub/fontawesome.css' %}">
+    <link rel="stylesheet" href="{%static 'hub/templatemo-liberty-market.css' %}">
+    <link rel="stylesheet" href="{%static 'hub/owl.css' %}">
+    <link rel="stylesheet" href="{%static 'hub/animate.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{%static '/hub/editorform.css'  %}">
+   
+<!--
+
+TemplateMo 577 Liberty Market
+
+https://templatemo.com/tm-577-liberty-market
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <nav class="main-nav">
+                  <!-- ***** Logo Start ***** -->
+                  <a href="#" class="logo">
+                      <img src="{%static 'hub/images/DIY_2.png' %}" alt="DIY EVENT HUB">
+                  </a>
+                  <!-- ***** Logo End ***** -->
+                  <!-- ***** Menu Start ***** -->
+                  <ul class="nav">
+                    <!-- <li><a href="index.html" class="active">Home</a></li> -->
+                      <li><button><a href="/DIY_user_page">Home </a></button></li>
+                      <li > <a href="#">User Email </a></li>
+                      <li><button><a href="/DIY_index">Logout</a></button></li>
+                  </ul>   
+                  <!-- ***** Menu End ***** -->
+              </nav>
+          </div>
+      </div>
+  </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  <!-- style=" background-image:url('static/hub/images/featured-01.jpg');" -->
+  <div class="page-heading">
+      <!-- <div class="image" style="display:none;"><img id="layout1" alt="layout1" src="{%static 'hub/images/featured-01.jpg' %}"></div> -->
+      <p onclick="myCanvas()"> VIEW </p>
+      <canvas id="myCanvas" width="700px" height="700px" style="border:5px solid #000000; border-radius: 3%; align-items: center;">  
+      </canvas>
+      <script>
+        function myCanvas() {
+
+          /* To get the backgroung-image here */
+
+          // const titleInput = document.getElementById("poster-title");
+          // var c = document.getElementById("myCanvas");
+          // var ctx = c.getContext("2d");
+          // var img = document.getElementById("layout1");
+          // ctx.drawImage(img,0,0,1050,1050);
+
+           var canvas = document.getElementById("myCanvas");
+           var ctx1 = canvas.getContext("2d");
+           ctx1.font = "30px Arial";
+           ctx1.style= "#fff";
+           ctx1.fillText("YOU ARE INVITED !",200,100);
+           ctx1.fillText("TITLE",300,200);
+           ctx1.fillText("Discription",290,300);
+           ctx1.fillText("Time",200,400);
+           ctx1.fillText("Date",400,400);
+           ctx1.fillText("Location",50,500);
+        }
+          </script>
+        <br>
+        <button type="submit" style="height: 45px; font-size: large;">Generate Link </button>
+        
+  </div>
+
+</body>
+   <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2022 <a href="/DIY_index">DIY EVENT HUB </a>
+          <a title="DIY EVENT HUB" rel="sponsored" href="/DIY_index" target="_blank"></a></p>
+        </div>
+      </div>
+    </div>
+  </footer> 
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{%static 'hub/js/jquery.min.js' %}"></script>
+  <script src="{%static 'hub/js/bootstrap.min.js' %}"></script>
+
+  <script src="{%static 'hub/js/isotope.min.js' %}"></script>
+  <script src="{%static 'hub/js/owl-carousel.js' %}"></script>
+
+  <script src="{%static 'hub/js/tabs.js' %}"></script>
+  <script src="{%static 'hub/js/popup.js' %}"></script>
+  <script src="{%static 'hub/js/custom.js' %}"></script>
+</html>
+
+
+
