@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in & Sign up Form</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'hub/style.css' %}" />
+  </head>
+  <body>
+    <main>
+        <div class="box">
+            <div class="inner-box">
+                <div class="logo">
+                    <img src="{%static 'hub/images/logo.png' %}" alt="DIY EVENT HUB"/>
+                    <h4>DIY EVENT HUB</h4>
+                  </div>
+
+                <div class="forms-wrap">
+                    <form  method="POST">
+                        {% csrf_token %}
+                        <div id="register-form">
+                            <div class="Error_Msg">
+                                {% if form.username.errors %}
+                                {% for error in form.username.errors %}
+                                <div>
+                                    <small>{{ error|escape }}</small>
+                                </div>
+                                {% endfor %}
+
+                                {% elif form.email.errors %}
+                                {% for error in form.email.errors %}
+                                <div>
+                                    <small>{{ error|escape }}</small>
+                                </div>
+                                {% endfor %}
+
+                                {% elif form.password1.errors %}
+                                {% for error in form.password1.errors %}
+                                <div>
+                                    <small>{{ error|escape }}</small>
+                                </div>
+                                {% endfor %}
+
+                                {% elif form.password2.errors %}
+                                {% for error in form.password2.errors %}
+                                <div>
+                                    <small>{{ error|escape }}</small>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                            <div class="login_labels">
+                                <div>
+                                    <label>First name<br></label>
+                                    {{form.first_name}}
+                                </div>
+                                <div>
+                                    <label>Last name<br></label>
+                                    {{form.last_name}}
+                                </div>
+                                <div>
+                                    <label>Username<br></label>
+                                    {{form.username}}
+                                </div>
+                                <div>
+                                    <label>Your Email<br></label>
+                                    {{form.email}}
+                                </div>
+                                <div>
+                                    <label>Password<br></label>
+                                    {{form.password1}}
+                                </div>
+                                <div>
+                                    <label>Confirm Password<br></label>
+                                    {{form.password2}}
+                                </div>
+                            </div>
+                            <div><br>
+                                <button type="submit" class="sign-btn" >Register</button>
+                            </div>
+                            <div>
+                                <p class="mb-0 mt-3">Already have an account ?<a href="{% url 'login' %}"><br>Sign in</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="carousel">
+                    <div class="images-wrapper">
+                      <img src="{%static 'hub/images/image1.png' %}" class="image img-1 show" alt="" />
+                      <img src="{%static 'hub/images/image2.png' %}" class="image img-2" alt="" />
+                      <img src="{%static 'hub/images/image3.png' %}" class="image img-3" alt="" />
+                    </div>
+        
+                    <div class="text-slider">
+                      <div class="text-wrap">
+                        <div class="text-group">
+                          <h2>Create your special moments</h2>
+                          <h2>Customize your ecents</h2>
+                          <h2>Invite more people through us</h2>
+                        </div>
+                      </div>
+        
+                      <div class="bullets">
+                        <span class="active" data-value="1"></span>
+                        <span data-value="2"></span>
+                        <span data-value="3"></span>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </main>
+    <script src="{%static 'hub/js/app.js' %}"></script>
+</body>
+</html>
