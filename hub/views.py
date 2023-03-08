@@ -3,6 +3,14 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.template import loader
 
+from hub.models import UserDetails
+from django.contrib import messages
+from django.contrib.auth import login
+from django.shortcuts import redirect, render
+from django.urls import reverse
+from hub.forms import RegisterForm
+
+
 from hub.models import *
 
 # note: request object is an HttpRequestObject, it has information about
