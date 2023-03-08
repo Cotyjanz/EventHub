@@ -4,8 +4,7 @@ from django.db import models
 
    
 class EventDetails(models.Model):
-   event_id = models.AutoField(primary_key= True)    
-   u_id = models.ForeignKey(UserDetails, on_delete = models.CASCADE)
+   event_id = models.AutoField(primary_key= True)
    title = models.CharField(max_length=255)
    description = models.TextField(max_length=255)
    Location = models.CharField(max_length=255)
