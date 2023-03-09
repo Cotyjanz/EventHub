@@ -36,12 +36,34 @@ def event_detail(request, primary_key):
  	return render(request, 'hub/event_page.html', context)
 
 # def event_submit(request);
+def signin(request):
+    if request.user.is_authenticated and not request.user.is_anonymous:
+        return render(request, 'hub/user_page.html')
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            request.session['username'] = 'username'
+            return render(request, 'hub/user_page.html')
+        else:
+            form = AuthenticationForm(request.POST)
+            return render(request, 'registration/login.html', {'form': form})
+    if request.method == 'GET':
+        form = AuthenticationForm()
+        return render(request, 'registration/login.html', {'form': form})
+
+def signout(request):
+    try:
+        Session.objects.all().delete()
+        logout(request)
+        return redirect("/")
+    except:
+        pass
+    return redirect("/")
 
 
-def DIY_signup(request):
-    template = loader.get_template('hub/signup.html')
-    return HttpResponse(template.render())
-  
 def register(request):
 	if request.method == "GET":
 		return render(request, "registration/register.html",{"form": RegisterForm})
@@ -49,7 +71,6 @@ def register(request):
 		form = RegisterForm(request.POST)
 		if form.is_valid():
 			user = form.save()
-			login(request, user)
 			return redirect(reverse("DIY_index"))
 		else:
 			messages.error(request, 'Error Processing Your Request')
