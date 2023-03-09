@@ -9,6 +9,8 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from hub.forms import RegisterForm
 
+from django.contrib.sessions.models import Session
+from django.contrib.auth.forms import AuthenticationForm
 
 from hub.models import *
 
