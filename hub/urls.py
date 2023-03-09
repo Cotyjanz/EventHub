@@ -7,6 +7,8 @@ from django.conf.urls import include
 urlpatterns = [
 	path('accounts/', include("django.contrib.auth.urls")),
 	path('register/', views.register, name="register"),
+	path('login/', views.signin, name="login"),
+  	path('logout/', views.signout, name="logout"),
 	path('', views.DIY_index, name='DIY_index'),
 	path('DIY_index', views.DIY_index, name='DIY_index'),
 	path('DIY_user_page', views.DIY_user_page, name = 'DIY_user_page'),
