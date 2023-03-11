@@ -90,7 +90,7 @@ def DIY_create(request):
         form = EventDetailsForm(request.POST)
         if form.is_valid:
             form.save()
-            return render(request, 'hub/user_page.html')
+            return render(request, 'hub/layout1.html')
     else:
         messages.error(request, 'Error Processing Your Request while post')
         context = {'form': EventDetailsForm}
