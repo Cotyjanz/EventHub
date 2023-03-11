@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.template import loader
 
 from django.contrib import messages
-from django.contrib.auth import login
+fom django.contrib.auth import login, authenticate, logout
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from hub.forms import RegisterForm
