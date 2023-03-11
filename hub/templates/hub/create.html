@@ -62,9 +62,9 @@ https://templatemo.com/tm-577-liberty-market
                   <!-- ***** Menu Start ***** -->
                   <ul class="nav">
                     <!-- <li><a href="index.html" class="active">Home</a></li> -->
-                      <li><button><a href="/DIY_user_page">Home </a></button></li>
+                      <li><button><a href="{%url 'DIY_user_page' %}">Home </a></button></li>
                       <li > <a href="#">User Email </a></li>
-                      <li><button><a href="/DIY_index">Logout</a></button></li>
+                      <li><button><a href="{% url 'logout'%}">Logout</a></button></li>
                   </ul>   
                   <!-- <a class='menu-trigger'>
                       <span>Menu</span>
@@ -81,15 +81,16 @@ https://templatemo.com/tm-577-liberty-market
 
    <div class="poster-panel" style= "width:70% ; left:200px; bottom: 25px; background-color:rgb(255, 140, 107, 0.7);">
 		 <h1>Create Your Event</h1>
-		<form class="poster-form" id="poster-form" style= "width:auto" action="/DIY_layout1">
+		<form class="poster-form" id="poster-form" style= "width:auto" method="POST">
+      {% csrf_token %}
 			<div class="user-box">
 			<label for="poster-title">Event Title</label>
-			<input type="text" id="poster-title" name="poster-title">
+			{{form.title}}
 			</div>
 			<br>
 			<div class="user-box">
 			<label for="poster-description">Event Description</label>
-			<input type="text" id="poster-description" name="poster-description">
+			{{form.description}}
 			</div>
 			<br>
 			<div class="user-box">
@@ -104,22 +105,22 @@ https://templatemo.com/tm-577-liberty-market
 			<br>
 			<div class="user-box">
 			<label for="poster-title">Event Date</label>
-			<input type="date" id="poster-date" name="poster-date">
+			{{form.date}}
 			</div>
 			<br>
 			<div class="user-box">
 			<label for="poster-time">Event Time</label>
-			<input type="time" id="poster-time" name="poster-time">
+			{{form.time}}
 			</div>
 			<br>
 			<div class="user-box">
 			<label for="poster-time">Event Location</label>
-			<input type="text" id="poster-location" name="poster-location">
+			{{form.Location}}
 			</div>
 			<br>
 			<div class="user-box">
 			<label for="poster-public">Is this Public Event?  
-			<input type="checkbox" style="height: 20px; width: 20px;" id="poster-public" name="poster-public"> </label>
+        {{form.Is_public}}
 			</div>
 			<br>
       <div class="user-box">
