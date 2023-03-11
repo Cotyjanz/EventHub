@@ -39,15 +39,13 @@ def event_detail(request, primary_key):
 
 # def event_submit(request);
 def signin(request):
-    if request.user.is_authenticated and not request.user.is_anonymous:
-        return render(request, 'hub/user_page.html')
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            request.session['username'] = 'username'
+            request.session['username'] = username
             return render(request, 'hub/user_page.html')
         else:
             form = AuthenticationForm(request.POST)
@@ -55,6 +53,10 @@ def signin(request):
     if request.method == 'GET':
         form = AuthenticationForm()
         return render(request, 'registration/login.html', {'form': form})
+    if request.user.is_authenticated and not request.user.is_anonymous:
+        if username not in request.session:
+            request.session['username'] = username
+            return render(request, 'hub/user_page.html')
 
 def signout(request):
     try:
@@ -80,9 +82,24 @@ def register(request):
 			return render(request, 'registration/register.html', context)
 
 def DIY_user_page(request):
- template = loader.get_template('hub/user_page.html')
- return HttpResponse(template.render())
+    if request.user.is_authenticated and not request.user.is_anonymous:
+        return render(request, 'hub/user_page.html')
 
 def DIY_create(request):
-    template = loader.get_template('hub/create.html')
-    return HttpResponse(template.render())
+    if request.method == 'POST':
+        form = EventDetailsForm(request.POST)
+        if form.is_valid:
+            form.save()
+            return render(request, 'hub/user_page.html')
+    else:
+        messages.error(request, 'Error Processing Your Request while post')
+        context = {'form': EventDetailsForm}
+        return render(request, 'hub/create.html', context)
+    if request.method == 'GET':
+        messages.error(request, 'Error Processing Your Request')
+        context = {'form': EventDetailsForm}
+        return render(request, 'hub/create.html', context)
+
+def DIY_layout1(request):
+    if request.user.is_authenticated and not request.user.is_anonymous:
+        return render(request, 'hub/layout1.html')
