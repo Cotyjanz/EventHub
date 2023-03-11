@@ -1,9 +1,11 @@
+from django import forms
 from django.contrib.auth.forms import UserCreationForm
+from hub.models import EventDetails
 
 
 class EventDetailsForm(forms.ModelForm):
     class Meta:
-        model = EventDetail
+        model = EventDetails
         fields = ('title', 'description', 'Location', 'date', 'time', 'Is_public',)
         exclude = ('u_id',)
 
