@@ -63,7 +63,7 @@ https://templatemo.com/tm-577-liberty-market
                   <ul class="nav">
                     <!-- <li><a href="index.html" class="active">Home</a></li> -->
                       <li><button><a href="{%url 'DIY_user_page' %}">Home </a></button></li>
-                      <li > <a href="#">User Email </a></li>
+                      <li > <a href="#">User Email </a>{{request.user.username}}</li>
                       <li><button><a href="{% url 'logout'%}">Logout</a></button></li>
                   </ul>   
                   <!-- <a class='menu-trigger'>
