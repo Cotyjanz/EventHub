@@ -99,7 +99,3 @@ def DIY_create(request):
         messages.error(request, 'Error Processing Your Request')
         context = {'form': EventDetailsForm}
         return render(request, 'hub/create.html', context)
-
-def DIY_layout1(request):
-    if request.user.is_authenticated and not request.user.is_anonymous:
-        return render(request, 'hub/layout1.html')
