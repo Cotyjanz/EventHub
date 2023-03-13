@@ -93,8 +93,8 @@ def register(request):
 
 def DIY_user_page(request):
     if request.user.is_authenticated and not request.user.is_anonymous:
-	username = request.session['username']
-        return render(request, 'hub/user_page.html',{"username" : username} )
+       username = request.session['username']
+       return render(request, 'hub/user_page.html',{"username" : username} )
 
 
 def DIY_create(request):
