@@ -51,8 +51,14 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                       <!-- <li><a href="index.html" class="active">Home</a></li> -->
+                      {%if request.user.username%}
+                        <li><button><a href="{% url 'login' %}">Dashboard</a></button></li>
+                        <li><button style="background-color: #aedb81;"><a href="#">Logged in as:{{request.user.username}}</a></button></li>
+                        <li><button><a href="{% url 'logout' %}">Logout</a></button></li>
+                        {%else%}
                         <li><button><a href="{% url 'login' %}">Login</a></button></li>
                         <li><button><a href="{% url 'register' %}">Register</a></button></li>
+                        {% endif %}
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
