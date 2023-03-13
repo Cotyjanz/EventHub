@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.template import loader
+from datetime import datetime
 
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
@@ -46,17 +47,26 @@ def signin(request):
         if user is not None:
             login(request, user)
             request.session['username'] = username
-            return render(request, 'hub/user_page.html')
+            response =  render(request, 'hub/user_page.html', {"username" : username})
+            response.set_cookie('last_connection', datetime.now())
+            response.set_cookie('username', datetime.now())
+            return response
         else:
             form = AuthenticationForm(request.POST)
             return render(request, 'registration/login.html', {'form': form})
     if request.method == 'GET':
-        form = AuthenticationForm()
-        return render(request, 'registration/login.html', {'form': form})
-    if request.user.is_authenticated and not request.user.is_anonymous:
-        if username not in request.session:
-            request.session['username'] = username
-            return render(request, 'hub/user_page.html')
+        if 'username' in request.COOKIES and 'last_connection' in request.COOKIES and not request.user.is_anonymous:
+            username = request.COOKIES['username']
+            last_connection = request.COOKIES['last_connection']
+            last_connection_time = datetime.strptime(last_connection[:-7], "%Y-%m-%d %H:%M:%S")
+            if (datetime.now() - last_connection_time).seconds < 100:
+                return render(request, 'hub/user_page.html', {"username" : username})
+            else:
+                form = AuthenticationForm(request.POST)
+                return render(request, 'registration/login.html', {'form': form})
+        else:
+            form = AuthenticationForm(request.POST)
+            return render(request, 'registration/login.html', {'form': form})
 
 def signout(request):
     try:
@@ -83,7 +93,9 @@ def register(request):
 
 def DIY_user_page(request):
     if request.user.is_authenticated and not request.user.is_anonymous:
-        return render(request, 'hub/user_page.html')
+	username = request.session['username']
+        return render(request, 'hub/user_page.html',{"username" : username} )
+
 
 def DIY_create(request):
     if request.method == 'POST':
