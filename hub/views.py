@@ -96,6 +96,5 @@ def DIY_create(request):
         context = {'form': EventDetailsForm}
         return render(request, 'hub/create.html', context)
     if request.method == 'GET':
-        messages.error(request, 'Error Processing Your Request')
         context = {'form': EventDetailsForm}
         return render(request, 'hub/create.html', context)
