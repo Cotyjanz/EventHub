@@ -104,7 +104,12 @@ def DIY_create(request):
             event_details = form.save(commit=False)
             event_details.u_id = request.user
             event_details.save()
-            return render(request, 'hub/user_page.html')
+            query = EventDetails.objects.filter(event_id=event_details.event_id)
+            event = get_object_or_404(query)
+            context = {
+ 		        'event' : event
+ 	        }
+            return render(request, 'hub/layout2.html', context)
         else:
             messages.error(request, form.errors)
             return render(request, 'hub/create.html')
@@ -112,3 +117,11 @@ def DIY_create(request):
     if request.method == 'GET':
         context = {'form': EventDetailsForm}
         return render(request, 'hub/create.html', context)
+    
+def DIY_layout(request):
+    template = loader.get_template('hub/layout1.html')
+    return HttpResponse(template.render())
+
+def DIY_layout2(request):
+    template = loader.get_template('hub/layout2.html')
+    return HttpResponse(template.render())
