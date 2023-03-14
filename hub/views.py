@@ -100,13 +100,15 @@ def DIY_user_page(request):
 def DIY_create(request):
     if request.method == 'POST':
         form = EventDetailsForm(request.POST)
-        if form.is_valid:
-            form.save()
+        if form.is_valid():
+            event_details = form.save(commit=False)
+            event_details.u_id = request.user
+            event_details.save()
             return render(request, 'hub/user_page.html')
-    else:
-        messages.error(request, 'Error Processing Your Request while post')
-        context = {'form': EventDetailsForm}
-        return render(request, 'hub/create.html', context)
+        else:
+            messages.error(request, form.errors)
+            return render(request, 'hub/create.html')
+
     if request.method == 'GET':
         context = {'form': EventDetailsForm}
         return render(request, 'hub/create.html', context)

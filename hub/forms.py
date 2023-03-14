@@ -6,11 +6,11 @@ from hub.models import EventDetails
 class EventDetailsForm(forms.ModelForm):
     class Meta:
         model = EventDetails
-        fields = ('title', 'description', 'Location', 'date', 'time', 'Is_public', 'u_id',)
+        fields = ('title', 'description', 'Location', 'date', 'time', 'Is_public',)
         widgets={
 'description': forms.TextInput(attrs={'style': 'width: 100%;', }),
 'date': forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD', 'style': 'width: 40%;', }),
-'time': forms.TextInput(attrs={'placeholder': 'HH-MM-SS', 'style': 'width: 40%;', }),
+'time': forms.TextInput(attrs={'placeholder': 'HH:MM:SS', 'style': 'width: 40%;', }),
         }
 
 class RegisterForm(UserCreationForm):
