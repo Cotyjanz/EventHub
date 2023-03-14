@@ -1,0 +1,120 @@
+{% extends "hub/layout1.html"%}
+<html>
+    <body>
+        {%block content %}
+        <table>
+            <tr>
+                <th>
+                    <div class="image" style="display:none;"><img id="layout1" alt="layout1" src="static/hub/layouts/birthday1.jpg"></div>
+                    <canvas id="myCanvas1" width="200px" height="300px" style=" margin: 5px ;border:2px solid #000000; border-radius: 3%; align-items: center; ">  
+                    </canvas>
+                    <br>
+                    <button onclick="myfunc1()" type="submit" style="height: 45px; font-size: large;">Select</button>
+                    
+                </th>
+                
+                <th>
+                    <div class="image" style="display:none;"><img id="layout2" alt="layout2" src="static/hub/layouts/birthday2.jpg"></div>
+                    <canvas id="myCanvas2" width="200px" height="300px" style="margin: 5px ; border:2px solid #000000; border-radius: 3%; align-items: center;">  
+                    </canvas>
+                    <br>
+                    <button onclick="myfunc2()" type="submit" style="height: 45px; font-size: large;">Select</button>
+                    
+                </th>
+                <th>
+                    <div class="image" style="display:none;"><img id="layout3" alt="layout3" src="static/hub/layouts/wedding1.jpg"></div>
+                    <canvas id="myCanvas3" width="200px" height="300px" style="margin: 5px ; border:2px solid #000000; border-radius: 3%; align-items: center;">  
+                    </canvas> 
+                    <br>                   
+                    <button onclick="myfunc3()" type="submit" style="height: 45px; font-size: large;">Select</button>
+                </th>
+                <th>
+                    <div class="image" style="display:none;"><img id="layout4" alt="layout4" src="static/hub/layouts/concert1.jpg"></div>
+                    <canvas id="myCanvas4" width="200px" height="300px" style="margin: 5px ; border:2px solid #000000; border-radius: 3%; align-items: center;">  
+                    </canvas> 
+                    <br>                   
+                    <button onclick="myfunc4()" type="submit" style="height: 45px; font-size: large;">Select</button>
+                </th>
+            </tr>
+        </table>
+        <br><br>
+        <canvas id="customCanvas" width="400px" height="500px" style="margin: 5px ; border:2px solid #000000; border-radius: 3%; align-items: center;">  
+        </canvas> 
+        <br>
+        <script>
+            window.onload = function myCanvas() {
+              var c = document.getElementById("myCanvas1");
+              var ctx = c.getContext("2d");
+              var img = document.getElementById("layout1");
+              ctx.drawImage(img,0,0,200,300);
+
+              var c = document.getElementById("myCanvas2");
+              var ctx = c.getContext("2d");
+              var img = document.getElementById("layout2");
+              ctx.drawImage(img,0,0,200,300);
+
+              var c = document.getElementById("myCanvas3");
+              var ctx = c.getContext("2d");
+              var img = document.getElementById("layout3");
+              ctx.drawImage(img,0,0,200,300);
+
+              var c = document.getElementById("myCanvas4");
+              var ctx = c.getContext("2d");
+              var img = document.getElementById("layout4");
+              ctx.drawImage(img,0,0,200,300);
+            }
+            function myfunc1(){
+                var c = document.getElementById("customCanvas");
+                var ctx = c.getContext("2d");
+                var img = document.getElementById("layout1");
+                ctx.globalAlpha = 0.7;
+                ctx.drawImage(img,0,0,400,500);
+                populate_data()
+            }
+            function myfunc2(){
+                var c = document.getElementById("customCanvas");
+                var ctx = c.getContext("2d");
+                var img = document.getElementById("layout2");
+                ctx.globalAlpha = 0.7;
+                ctx.drawImage(img,0,0,400,500);
+                populate_data()
+            }
+            function myfunc3(){
+                var c = document.getElementById("customCanvas");
+                var ctx = c.getContext("2d");
+                var img = document.getElementById("layout3");
+                ctx.globalAlpha = 0.7;
+                ctx.drawImage(img,0,0,400,500);
+                populate_data()
+            }
+            function myfunc4(){
+                var c = document.getElementById("customCanvas");
+                var ctx = c.getContext("2d");
+                var img = document.getElementById("layout4");
+                ctx.globalAlpha = 0.7;
+                ctx.drawImage(img,0,0,400,500);
+                populate_data()
+            }
+            var changeFontStyle = function (font) {
+                document.getElementById("output-text").style.fontFamily = font.value;
+            }
+            function populate_data(){
+                var c = document.getElementById("customCanvas");
+                var ctx = c.getContext("2d");
+                ctx.font = "50px freestyle script";
+                ctx.globalAlpha = 1.0;
+                ctx.fillStyle = "#ff0000";
+                ctx.fillText("{{event.title}}", 20, 50);
+                ctx.fillText("{{event.description}}", 20, 100);
+                ctx.fillText("{{event.Location}}", 20, 150);
+                ctx.fillText("{{event.date}}", 20, 200);
+                ctx.fillText("{{event.time}}", 20, 250);
+                
+
+            }
+    </script>
+        <br>
+        {%endblock%}
+
+    </body>
+</html>
