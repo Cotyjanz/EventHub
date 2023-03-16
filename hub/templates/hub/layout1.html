@@ -1,107 +1,76 @@
+{% extends 'hub/event_page.html' %}
 
 <!DOCTYPE html>
-<html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="author" content="templatemo">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
+    {%block content %}
+<style>
+		.Title_Description {
+			flex-basis: 100%
+		}
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+		.poster_img {
+			
+			background-image: url("static/hub/layouts/wedding1.png");
+			background-position: top center;
+      border-radius: 20px;
+      max-width: 645px;
+			margin: 0 auto;
+			display: block
+		}
+    #title{
+      font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
 
-    <title>Create Event</title>
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 0px #ef4da6;
+  }
+  
+  to {
+    text-shadow: 0 0 5px #ef4da6, 0 0 10px #ef4da6, 0 0 15px #ff4da6;
+  }
+}
+    
 
-    <!-- Bootstrap core CSS -->
-    {%load static%}
-    <link href="{%static 'hub/bootstrap.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{%static 'hub/style.css' %}" />
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{%static 'hub/fontawesome.css' %}">
-    <link rel="stylesheet" href="{%static 'hub/templatemo-liberty-market.css' %}">
-    <link rel="stylesheet" href="{%static 'hub/owl.css' %}">
-    <link rel="stylesheet" href="{%static 'hub/animate.css' %}">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="{%static '/hub/editorform.css'  %}">
-   
-<!--
-
-TemplateMo 577 Liberty Market
-
-https://templatemo.com/tm-577-liberty-market
-
--->
-  </head>
-
+	</style>
 <body>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-      <div class="row">
-          <div class="col-12">
-              <nav class="main-nav">
-                  <!-- ***** Logo Start ***** -->
-                  <a href="#" class="logo">
-                      <img src="{%static 'hub/images/DIY_2.png' %}" alt="DIY EVENT HUB">
-                  </a>
-                  <!-- ***** Logo End ***** -->
-                  <!-- ***** Menu Start ***** -->
-                  <ul class="nav">
-                    <!-- <li><a href="index.html" class="active">Home</a></li> -->
-                      <li><button><a href="/DIY_user_page">Home </a></button></li>
-                      <li><button style="background-color: #aedb81;"><a href="#">Logged in as:{{request.user.username}}</a></button></li>
-                      <li><button><a href="{% url 'logout' %}">Logout</a></button></li>
-                  </ul>   
-                  <!-- ***** Menu End ***** -->
-              </nav>
+  <div>
+    <div class="poster_img">
+      <div class="Title_Description">
+        <div>
+          <h1 id="title" style="font-family: 'Colonna MT'; color:#000000;font-size:40px;font-weight:700;letter-spacing:3px;line-height:150%;text-align:center;margin-top:0;margin-bottom:0;">Title<br/></h1>
+        </div>
+        <div>
+          <div style=" margin-left: auto; margin-right: auto;border-top:2px solid #000000;width:35%;"></div>
+        </div>
+        <div >
+          <h1 style="color:#000000;direction:ltr;font-family:'Lucida Handwriting';font-size:22px;font-weight:400;letter-spacing:2px;line-height:150%;text-align:center;margin-top:0;margin-bottom:0;">Description<br/></h1>
+        </div>
+          <div style="height:50px;"></div>
+          <div style="height:50px;"></div>
+          <div>
+            <p style=" padding-left: 20px; text-align: left; line-height: 50px;"><span style=" font-family: 'Ink Free' ;color: #000000;font-size: 35px; line-height: 40px;">Location</span></p>
           </div>
-      </div>
-  </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
-  <div class="page-heading">
-      {% block content %}
-      {% endblock %}
-        
-  </div>
-
-</body>
-   <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Copyright © 2022 <a href="/DIY_index">DIY EVENT HUB </a>
-          <a title="DIY EVENT HUB" rel="sponsored" href="/DIY_index" target="_blank"></a></p>
+          <div style="height:70px;"></div>
+          <div>
+            <p style="text-align: center; line-height: 40px;"><span style=" font-family: 'Algerian';color: #000000;font-size: 25px; line-height: 40px;">Date</span></p>
+          </div>
+          <div>
+            <p style=" text-align: center; line-height: 40px;"><span style=" font-family: 'Algerian';color: #000000;font-size: 25px; line-height: 40px;">Time</span></p>
+          </div>
+        <div>
+          <div style="height:30px;"></div>
         </div>
       </div>
     </div>
-  </footer> 
-
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="{%static 'hub/js/jquery.min.js' %}"></script>
-  <script src="{%static 'hub/js/bootstrap.min.js' %}"></script>
-
-  <script src="{%static 'hub/js/isotope.min.js' %}"></script>
-  <script src="{%static 'hub/js/owl-carousel.js' %}"></script>
-
-  <script src="{%static 'hub/js/tabs.js' %}"></script>
-  <script src="{%static 'hub/js/popup.js' %}"></script>
-  <script src="{%static 'hub/js/custom.js' %}"></script>
+  </div>
+{% endblock%}
+</body>
 </html>
-
-
-

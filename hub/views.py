@@ -104,12 +104,7 @@ def DIY_create(request):
             event_details = form.save(commit=False)
             event_details.u_id = request.user
             event_details.save()
-            query = EventDetails.objects.filter(event_id=event_details.event_id)
-            event = get_object_or_404(query)
-            context = {
- 		        'event' : event
- 	        }
-            return render(request, 'hub/layout2.html', context)
+            return render(request, 'hub/user_page.html')
         else:
             messages.error(request, form.errors)
             return render(request, 'hub/create.html')
@@ -118,10 +113,26 @@ def DIY_create(request):
         context = {'form': EventDetailsForm}
         return render(request, 'hub/create.html', context)
     
+################################################################
+# Created view just to check the pages. 
+# Having difficulty linking the layout pages.  
+#################################################################
 def DIY_layout(request):
     template = loader.get_template('hub/layout1.html')
     return HttpResponse(template.render())
 
 def DIY_layout2(request):
     template = loader.get_template('hub/layout2.html')
+    return HttpResponse(template.render())
+
+def DIY_layout3(request):
+    template = loader.get_template('hub/layout3.html')
+    return HttpResponse(template.render())
+
+def DIY_layout4(request):
+    template = loader.get_template('hub/layout4.html')
+    return HttpResponse(template.render())
+
+def DIY_layout5(request):
+    template = loader.get_template('hub/layout5.html')
     return HttpResponse(template.render())
