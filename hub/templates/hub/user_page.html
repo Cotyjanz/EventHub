@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    {%load static%}
     <meta charset="utf-8">
     <meta name="author" content="templatemo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <title>User Page</title>
-
-    <!-- Bootstrap core CSS -->
-    {%load static%}
+    <title>{{request.user.username}}'s' Page</title>
+    <!-- Bootstrap css -->
     <link href="{%static 'hub/bootstrap.min.css' %}" rel="stylesheet">
-
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{%static 'hub/fontawesome.css' %}">
@@ -20,13 +19,7 @@
     <link rel="stylesheet" href="{%static 'hub/owl.css' %}">
     <link rel="stylesheet" href="{%static 'hub/animate.css' %}">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
 
-TemplateMo 577 Liberty Market
-
-https://templatemo.com/tm-577-liberty-market
-
--->
   </head>
 
 <body>
@@ -62,9 +55,6 @@ https://templatemo.com/tm-577-liberty-market
                       <li><button style="background-color: #aedb81;"><a href="#">Logged in as:{{request.user.username}}</a></button></li>
                       <li><button><a href="{% url 'logout' %}">Logout</a></button></li>
                   </ul>   
-                  <!-- <a class='menu-trigger'>
-                      <span>Menu</span>
-                  </a> -->
                   <!-- ***** Menu End ***** -->
               </nav>
           </div>
@@ -73,26 +63,17 @@ https://templatemo.com/tm-577-liberty-market
   </header>
   <!-- ***** Header Area End ***** -->
 
+  <!-- We list the user's own events here -->
   <div class="page-heading">
-     <!-- <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h6>Liberty NFT Market</h6>
-          <h2>Discover Some Top Items</h2>
-          <span>Home > <a href="#">Explore</a></span>
-        </div>
-      </div>
-    </div>  -->
-    
     <div class="featured-explore"> 
-      <div class="slider-header" style=" position:relative; right: 35%;" > <h1> Upcomming Events</h1></div>
+      <div class="slider-header" style=" position:relative; right: 35%;" > <h1> Your Events</h1></div>
       <br>
       <div class="container-fluid">
         
         <div class="row">
-          
           <div class="col-lg-12">
             <div class="owl-features owl-carousel">
+
               <div class="item">
                 <div class="thumb">
                   <img src="{%static 'hub/images/featured-01.jpg' %}" alt="" style="border-radius: 20px;">
@@ -109,54 +90,9 @@ https://templatemo.com/tm-577-liberty-market
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="thumb">
-                  <img src="{%static 'hub/images/featured-02.jpg' %}" alt="" style="border-radius: 20px;">
-                  <div class="hover-effect">
-                    <div class="content">
-                      <h4>Current Event 2</h4>
-                      <p>Title</p>
-                      <p>Description</p>
-                      <p>Date</p>
-                      <p>Time</p>
-                      <p>Views</p>
-                      <a href='#'>Link</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="thumb">
-                  <img src="{%static 'hub/images/featured-03.jpg' %}" alt="" style="border-radius: 20px;">
-                  <div class="hover-effect">
-                    <div class="content">
-                      <h4>Current Event 3</h4>
-                      <p>Title</p>
-                      <p>Description</p>
-                      <p>Date</p>
-                      <p>Time</p>
-                      <p>Views</p>
-                      <a href='#'>Link</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="thumb">
-                  <img src="{%static 'hub/images/featured-04.jpg' %}" alt="" style="border-radius: 20px;">
-                  <div class="hover-effect">
-                    <div class="content">
-                      <h4>Current Event 4</h4>
-                      <p>Title</p>
-                      <p>Description</p>
-                      <p>Date</p>
-                      <p>Time</p>
-                      <p>Views</p>
-                      <a href='#'>Link</a>
-                    </div>
-                  </div>
-                </div> 
-              </div>  
+
+
+
             </div>  
           </div>
         </div>
@@ -164,14 +100,16 @@ https://templatemo.com/tm-577-liberty-market
         <br>
         <br>
         <br> 
-        <div class="slider-header" style=" position:relative; right: 37%;" > <h1> Previous Events</h1></div>
+
+        <!-- We list other public events here -->
+        <div class="slider-header" style=" position:relative; right: 37%;" > <h1> Public Events:</h1></div>
         <br>
         <div class="container-fluid">
         
         <div class="row">
-          
           <div class="col-lg-12">
             <div class="owl-features owl-carousel">
+
               <div class="item">
                 <div class="thumb">
                   <img src="{%static 'hub/images/featured-01.jpg' %}" alt="" style="border-radius: 20px;">
@@ -188,54 +126,8 @@ https://templatemo.com/tm-577-liberty-market
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="thumb">
-                  <img src="{%static 'hub/images/featured-02.jpg' %}" alt="" style="border-radius: 20px;">
-                  <div class="hover-effect">
-                    <div class="content">
-                      <h4>Current Event 2</h4>
-                      <p>Title</p>
-                      <p>Description</p>
-                      <p>Date</p>
-                      <p>Time</p>
-                      <p>Views</p>
-                      <a href='#'>Link</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="thumb">
-                  <img src="{%static 'hub/images/featured-03.jpg' %}" alt="" style="border-radius: 20px;">
-                  <div class="hover-effect">
-                    <div class="content">
-                      <h4>Current Event 3</h4>
-                      <p>Title</p>
-                      <p>Description</p>
-                      <p>Date</p>
-                      <p>Time</p>
-                      <p>Views</p>
-                      <a href='#'>Link</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="thumb">
-                  <img src="{%static 'hub/images/featured-04.jpg' %}" alt="" style="border-radius: 20px;">
-                  <div class="hover-effect">
-                    <div class="content">
-                      <h4>Current Event 4</h4>
-                      <p>Title</p>
-                      <p>Description</p>
-                      <p>Date</p>
-                      <p>Time</p>
-                      <p>Views</p>
-                      <a href='#'>Link</a>
-                    </div>
-                  </div>
-                </div>   
-              </div> 
+
+            
             </div>  
           </div>
         </div>
