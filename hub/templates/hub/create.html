@@ -76,13 +76,11 @@ https://templatemo.com/tm-577-liberty-market
   </div>
   </header>
   <!-- ***** Header Area End ***** -->
-
-  <div class="page-heading"> 
-
-   <div class="poster-panel" style= "width:70% ; left:200px; bottom: 25px; background-color:rgb(255, 140, 107, 0.7);">
+<div class="page-heading"> 
+  <div class="poster-panel" style= "width:70% ; left:200px; bottom: 25px; background-color:rgb(255, 140, 107, 0.7);">
 		 <h1>Create Your Event</h1>
 		<form class="poster-form" id="poster-form" style= "width:auto" method="POST">
-      {% csrf_token %}
+      			{% csrf_token %}
 			<div class="user-box">
 			<label for="poster-title">Event Title</label>
 			{{form.title}}
@@ -96,10 +94,10 @@ https://templatemo.com/tm-577-liberty-market
 			<div class="user-box">
 			<label for="poster-type">Event Type</label>
 			<select name = "type">
-				<option value="javascript">Birthday</option>
-       			<option value="php">Concert</option>
-        		<option value="java">Marriage</option>
-        		<option value="golang">Baby Shower</option>
+				<option>Birthday</option>
+       			<option>Concert</option>
+        		<option>Marriage</option>
+        		<option>Baby Shower</option>
 			</select>
 			</div>
 			<br>
@@ -123,64 +121,16 @@ https://templatemo.com/tm-577-liberty-market
         		{{form.Is_public}}
 			</div>
 			<br>
-      <div class="user-box">
-      <label for="poster-public"> Choose Layout </label>
-      <div class="col-lg-12">
-        <div class="owl-features owl-carousel">
-          <div class="item">
-            <div class="thumb">
-              <input type="checkbox"><img id="layout1" src="{%static 'hub/images/featured-01.jpg' %}" alt="" onClick="myCanvas()" style="border-radius: 20px; width:250px">
-              <div class="hover-effect">
-                <div class="content">
-                  <!-- <button type="submit" style="height: 35px; font-size: medium;">Choose</button> -->
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="thumb">
-              <input type="checkbox"><img id="layout2" src="{%static 'hub/images/discover-03.jpg' %}" alt="" onClick="myCanvas()" style="border-radius: 20px; width:250px"></a>
-              <div class="hover-effect">
-                <div class="content">
-                  <!-- <button type="submit" style="height: 35px; font-size: medium;">Choose</button> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      <br>
-      <button type="submit" style="height: 45px; font-size: large;">Create Poster</button>
-
-
-			<!-- <div id="poster-preview"></div> -->
-		</div> 
-		  </form>	
-	  </div> 
-    <!-- <div id="poster-preview">Preview here  
-       <p onclick="myCanvas()">View</p>
-      <canvas id="myCanvas" width="700px" height="700px" style="border:5px solid #000000; border-radius: 3%; align-items: center;">  
-      </canvas>
-         <script>
-          function myCanvas() {
-            const titleInput = document.getElementById("poster-title");
-            var c = document.getElementById("myCanvas");
-            var ctx = c.getContext("2d");
-            var img = document.getElementById("layout1");
-            ctx.drawImage(img,0,0,1050,1050);
-
-             var canvas = document.getElementById("myCanvas");
-			       var ctx1 = canvas.getContext("2d");
-			       ctx1.font = "30px Arial";
-             ctx1.style= "#fff";
-			       ctx1.fillText(titleInput.value,255,300);
-
-          } 
-          
-          </script>  
-    </div> -->
-  </div> 
+			<div class="user-box">
+				<label for="poster-layout">Select Poster Layout  
+          			{{form.poster_layout}}
+        		</div>
+      			<br><br><br>
+      			<button type="submit" style="height: 45px; font-size: large;">Create Poster</button>
+    		</form>
+  	</div>	
+</div>
+  
 </body>
    <footer>
     <div class="container">
