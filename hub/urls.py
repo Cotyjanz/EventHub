@@ -15,5 +15,8 @@ urlpatterns = [
 	path('DIY_create', views.DIY_create, name = 'DIY_create'),
 	path('DIY_layout', views.DIY_layout, name = 'DIY_layout'),
    	path('DIY_layout2', views.DIY_layout2, name = 'DIY_layout2'),
+	path('DIY_layout3', views.DIY_layout3, name = 'DIY_layout3'),
+	path('DIY_layout4', views.DIY_layout4, name = 'DIY_layout4'),
+	path('DIY_layout5', views.DIY_layout5, name = 'DIY_layout5'),
 	path('<int:primary_key>/', views.event_detail, name='event_detail')
 ]
