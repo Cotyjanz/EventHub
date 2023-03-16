@@ -1,0 +1,57 @@
+{% extends 'hub/event_page.html' %}
+
+<!DOCTYPE html>
+
+<html>
+    {%block content %}
+<style>
+		.Title_Description {
+			flex-basis: 100%
+		}
+
+		.poster_img {
+			
+			background-image: url("static/hub/layouts/babyshower1.png");
+			background-position: top center;
+      border-radius: 20px;
+      max-width: 645px;
+			margin: 0 auto;
+			display: block
+		}
+	</style>
+<body>
+
+  <div>
+    <div class="poster_img">
+      <div class="Title_Description">
+        <div>
+          <h1 id="title" style=" font-family: 'Jokerman'; color:#966F33 ;font-size:50px;font-weight:700;letter-spacing:3px;line-height:150%;text-align:center;margin-top:0;margin-bottom:0;">Title<br/></h1>
+        </div>
+        <div>
+            <div style=" padding-top: 10px; border-top:2px solid  #ffffff;width:85%;"></div>
+            <div style=" padding-top: 10px; border-top:2px solid  #ffffff;width:90%;"></div>
+        </div>
+        <div >
+          <h1 style="padding-left: 20px; color:#D2042D ;direction:ltr;font-family:'Segoe Script';font-size:22px;font-weight:400;letter-spacing:2px;text-align:left;margin-top:1%;margin-bottom:0;">Description<br/></h1>
+        </div>
+          <div style="height:10px;"></div>
+          <div style="height:10px;"></div>
+            <div>
+              <p style="padding-right: 20px;text-align: right; line-height: 40px;"><span style=" font-family: 'Tempus Sans ITC';color: #C2B280;font-size: 25px; line-height: 40px;">Date</span></p>
+            </div>
+            <div>
+                <p style=" padding-right: 20px;text-align: right; line-height: 40px;"><span style=" font-family: 'Tempus Sans ITC';color: #C2B280;font-size: 25px; line-height: 40px;">Time</span></p>
+            </div>
+            <div>
+              <p style=" padding-right: 20px; text-align: right; line-height: 50px;"><span style=" font-family: 'Lucida Handwriting' ;color: #FF7F50;font-size: 25px; line-height: 40px;">Location</span></p>
+            </div>
+            <div style="height:100px;"></div>
+            <div>
+                <div style="height:30px;"></div>
+            </div>
+      </div>
+    </div>
+  </div>
+{% endblock%}
+</body>
+</html>
