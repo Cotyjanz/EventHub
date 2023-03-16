@@ -21,8 +21,8 @@ class EventDetails(models.Model):
    poster_layout = models.CharField(max_length=50, choices=SELECT_LAYOUT, default='layout 1')
    date = models.DateField()
    time = models.TimeField()
-   Is_public = models.BooleanField(null= True)
-   Is_rsvp = models.BooleanField(null=True)
+   Is_public = models.BooleanField(null= False, default= False)
+   Is_rsvp = models.BooleanField(null=False, default= False)
 
    
 
