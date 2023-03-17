@@ -73,26 +73,6 @@
     <br><br>
   </div>
 
-
-
-<!-- yes this is bad, no i dont care; If someone wants to make this external be my guest -CJ -->
-<script>
-  var shareButton = document.getElementById('share_button');
-  var confirmMessage = document.getElementById('confirm_message');
-
-  shareButton.addEventListener('click', function(event) {
-    var dummyElement = document.createElement('textarea');
-    dummyElement.value = window.location.href;
-    document.body.appendChild(dummyElement);
-    dummyElement.select();
-    document.execCommand('copy');
-    document.body.removeChild(dummyElement);
-    confirmMessage.style.display = 'inline-block';
-  });
-</script>
-
-
-
    <footer>
     <div class="container">
       <div class="row">
@@ -105,6 +85,9 @@
   </footer> 
 
   <!-- Scripts -->
+  <!-- Share event page button -->
+  <script src= "{%static 'hub/js/sharebutton.js' %}"></script>
+
   <!-- Bootstrap core JavaScript -->
   <script src="{%static 'hub/js/jquery.min.js' %}"></script>
   <script src="{%static 'hub/js/bootstrap.min.js' %}"></script>
