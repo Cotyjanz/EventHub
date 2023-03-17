@@ -29,14 +29,15 @@ def DIY_index(request):
 
 # This is the view which handles urls for the event pages themselves
 def event_detail(request, primary_key):
- 	# get_object_or_404 shortcut will display a 404 page if the object DNE
- 	event = get_object_or_404(EventDetails, event_id=primary_key)
- 	context = {
- 		'event' : event
- 	}
- 	# event_page.html is the parent to all the potential templates which might
- 	#   be choosen by the user
- 	return render(request, 'hub/event_page.html', context)
+    # get_object_or_404 shortcut will display a 404 page if the object DNE
+    event = get_object_or_404(EventDetails, event_id=primary_key)
+    context = {
+    	'event' : event,
+    }
+    # event_page.html is the parent to all the potential templates which might
+    # be choosen by the user
+    page = 'hub/' + event.poster_layout + '.html'
+    return render(request, page, context)
 
 
 def DIY_user_page(request):
