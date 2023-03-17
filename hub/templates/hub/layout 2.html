@@ -1,5 +1,6 @@
 {% extends 'hub/event_page.html' %}
 {%block content %}
+{% load static %}
 <style>
 		.Title_Description {
 			flex-basis: 100%
@@ -7,7 +8,7 @@
 
 		.poster_img {
 			
-			background-image: url("static/hub/layouts/birthday2.png");
+			background-image: url("{% static 'hub/layouts/birthday2.png' %}");
 			background-position: top center;
       border-radius: 20px;
       max-width: 645px;

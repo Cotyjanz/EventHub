@@ -138,21 +138,21 @@ def DIY_create(request):
 # Having difficulty linking the layout pages.  
 #################################################################
 def DIY_layout(request):
-    template = loader.get_template('hub/layout1.html')
+    template = loader.get_template('hub/layout 1.html')
     return HttpResponse(template.render())
 
 def DIY_layout2(request):
-    template = loader.get_template('hub/layout2.html')
+    template = loader.get_template('hub/layout 2.html')
     return HttpResponse(template.render())
 
 def DIY_layout3(request):
-    template = loader.get_template('hub/layout3.html')
+    template = loader.get_template('hub/layout 3.html')
     return HttpResponse(template.render())
 
 def DIY_layout4(request):
-    template = loader.get_template('hub/layout4.html')
+    template = loader.get_template('hub/layout 4.html')
     return HttpResponse(template.render())
 
 def DIY_layout5(request):
-    template = loader.get_template('hub/layout5.html')
+    template = loader.get_template('hub/layout 5.html')
     return HttpResponse(template.render())
