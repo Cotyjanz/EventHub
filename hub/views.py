@@ -38,6 +38,21 @@ def event_detail(request, primary_key):
  	#   be choosen by the user
  	return render(request, 'hub/event_page.html', context)
 
+
+def DIY_user_page(request):
+    if request.user.is_authenticated and not request.user.is_anonymous:
+       username = request.session['username']
+       user = User.objects.get(username=username)
+    events = EventDetails.objects.all().filter(Is_public=True).order_by('-event_id')[:10]
+    user_events = EventDetails.objects.all().filter(u_id=user.id)
+    context = {
+        'events' : events,
+        'userevents': user_events,
+        'username' : username
+    }
+    return render(request, 'hub/user_page.html', context)
+
+
 # def event_submit(request);
 def signin(request):
     if request.method == 'POST':
@@ -47,7 +62,17 @@ def signin(request):
         if user is not None:
             login(request, user)
             request.session['username'] = username
-            response =  render(request, 'hub/user_page.html', {"username" : username})
+            # This is not how we want to do this but for now we will just duplicate this code here,
+            # I do not believe cookies are being stored correctly.
+            events = EventDetails.objects.all().filter(Is_public=True).order_by('-event_id')[:10]
+            user_events = EventDetails.objects.all().filter(u_id=user.id)
+            context = {
+                'events' : events,
+                'usersevents': user_events,
+                'username' : username
+            }
+            #return redirect('/DIY_user_page', context)
+            response =  redirect('/DIY_user_page', context)
             response.set_cookie('last_connection', datetime.now())
             response.set_cookie('username', datetime.now())
             return response
@@ -60,7 +85,7 @@ def signin(request):
             last_connection = request.COOKIES['last_connection']
             last_connection_time = datetime.strptime(last_connection[:-7], "%Y-%m-%d %H:%M:%S")
             if (datetime.now() - last_connection_time).seconds < 100:
-                return render(request, 'hub/user_page.html', {"username" : username})
+                return redirect('DIY_user_page')
             else:
                 form = AuthenticationForm(request.POST)
                 return render(request, 'registration/login.html', {'form': form})
@@ -91,12 +116,6 @@ def register(request):
 			context = {'form': form}
 			return render(request, 'registration/register.html', context)
 
-def DIY_user_page(request):
-    if request.user.is_authenticated and not request.user.is_anonymous:
-       username = request.session['username']
-       return render(request, 'hub/user_page.html',{"username" : username} )
-
-
 def DIY_create(request):
     if request.method == 'POST':
         form = EventDetailsForm(request.POST)
@@ -104,7 +123,7 @@ def DIY_create(request):
             event_details = form.save(commit=False)
             event_details.u_id = request.user
             event_details.save()
-            return render(request, 'hub/user_page.html')
+            return redirect('DIY_user_page')
         else:
             messages.error(request, form.errors)
             return render(request, 'hub/create.html')

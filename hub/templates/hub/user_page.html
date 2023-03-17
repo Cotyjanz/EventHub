@@ -68,29 +68,27 @@
       <div class="slider-header" style=" position:relative; right: 35%;" > <h1> Your Events</h1></div>
       <br>
       <div class="container-fluid">
-        
+      
         <div class="row">
           <div class="col-lg-12">
             <div class="owl-features owl-carousel">
 
+              {% for EventDetails in userevents %}
               <div class="item">
-                <div class="thumb">
-                  <img src="{%static 'hub/images/featured-01.jpg' %}" alt="" style="border-radius: 20px;">
-                  <div class="hover-effect">
-                    <div class="content">
-                      <h4>Current Event 1</h4>
-                      <p>Title</p>
-                      <p>Description</p>
-                      <p>Date</p>
-                      <p>Time</p>
-                      <p>Views</p>
-                      <a href='#'>Link</a>
+                 <div class="col-md-4">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ EventDetails.title }}</h5>
+                      <p class="card-text">{{ EventDetails.description }}
+                        <p>{{ EventDetails.date }} {{ EventDetails.time }}</p></p>
+   
+                      <a href="{% url 'event_detail' EventDetails.event_id %}" class="btn btn-primary">View Now</a>
                     </div>
                   </div>
                 </div>
               </div>
-
-
+              {% endfor %}
 
             </div>  
           </div>
@@ -109,23 +107,22 @@
           <div class="col-lg-12">
             <div class="owl-features owl-carousel">
 
+              {% for EventDetails in events %}
               <div class="item">
-                <div class="thumb">
-                  <img src="{%static 'hub/images/featured-01.jpg' %}" alt="" style="border-radius: 20px;">
-                  <div class="hover-effect">
-                    <div class="content">
-                      <h4>Current Event 1</h4>
-                      <p>Title</p>
-                      <p>Description</p>
-                      <p>Date</p>
-                      <p>Time</p>
-                      <p>Views</p>
-                      <a href='#'>Link</a>
+                 <div class="col-md-4">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ EventDetails.title }}</h5>
+                      <p class="card-text">{{ EventDetails.description }}
+                        <p>{{ EventDetails.date }} {{ EventDetails.time }}</p></p>
+   
+                      <a href="{% url 'event_detail' EventDetails.event_id %}" class="btn btn-primary">View Now</a>
                     </div>
                   </div>
                 </div>
               </div>
-
+              {% endfor %}
             
             </div>  
           </div>
