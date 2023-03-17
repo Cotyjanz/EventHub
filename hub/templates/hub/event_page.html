@@ -67,8 +67,31 @@
   <div class="page-heading">
       {% block content %}
       {% endblock %}
-	  <br><br>  
+	  <br>
+    <button id="share_button">Share Event</button>
+    <span id="confirm_message" style="display:none;">Copied to your clipboard, paste to share!</span>
+    <br><br>
   </div>
+
+
+
+<!-- yes this is bad, no i dont care; If someone wants to make this external be my guest -CJ -->
+<script>
+  var shareButton = document.getElementById('share_button');
+  var confirmMessage = document.getElementById('confirm_message');
+
+  shareButton.addEventListener('click', function(event) {
+    var dummyElement = document.createElement('textarea');
+    dummyElement.value = window.location.href;
+    document.body.appendChild(dummyElement);
+    dummyElement.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummyElement);
+    confirmMessage.style.display = 'inline-block';
+  });
+</script>
+
+
 
    <footer>
     <div class="container">
