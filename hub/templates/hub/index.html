@@ -1,47 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="author" content="templatemo">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
     <title>DIY Events HUB</title>
-
-    <!-- Bootstrap core CSS -->
     {% load static %}
-
-    <link href="{%static 'hub/bootstrap.min.css' %}" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    
-    <link rel="stylesheet" href="{%static 'hub/templatemo-liberty-market.css' %}">
-    <link rel="stylesheet" href="{%static 'hub/owl.css' %}">
-    <link rel="stylesheet" href="{%static 'hub/animate.css' %}">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-  </head>
+     <link href="{%static 'hub/bootstrap.css' %}" rel="stylesheet">
+     <link rel="stylesheet" href="{%static 'hub/background.css' %}">
+</head>
 
 <body>
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
+  
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
+        <div>
+            <div>
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="/DIY_index" class="logo">
@@ -50,7 +24,6 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <!-- <li><a href="index.html" class="active">Home</a></li> -->
                       {%if request.user.username%}
                         <li><button><a href="{% url 'login' %}">Dashboard</a></button></li>
                         <li><button style="background-color: #aedb81;"><a href="#">Logged in as:{{request.user.username}}</a></button></li>
@@ -60,9 +33,7 @@
                         <li><button><a href="{% url 'register' %}">Register</a></button></li>
                         {% endif %}
                     </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
+
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>
@@ -74,9 +45,9 @@
   <!-- ***** Main Banner Area Start ***** -->
   <div class="main-banner">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6 align-self-center">
-          <div class="header-text">
+      <div>
+        <div class="col-banner">
+          <div >
             <h6>DIY Event Hub</h6>
             <h2>Your One-stop solution to Personalizing your events.</h2>
             <p>Whether you need an experiential event, a star-studded gala with big-name talent, or a corporate conference, DIY Event Hub can execute your vision to perfection..</p>
@@ -89,27 +60,16 @@
   
   <div class="categories-collections">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="categories">
-            <div class="row">
-              <div class="col-lg-12">
                 <div class="section-heading">
                   <div class="line-dec"></div>
                   <h2> PUBLIC EVENTS </h2>
                 </div>
               </div>
-
-
-              <!-- Card layout for event previews - CJ -->
-              <!-- Images and text colour still need to be dealt with -->
-
-              <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="row">
               <!-- card layout begins -->
               {% for EventDetails in events %}
                 <div class="col-md-4">
                   <div class="card mb-2">
-                    <img class="card-img-top" src="">
                     <div class="card-body">
                       <h5 class="card-title">{{ EventDetails.title }}</h5>
                       <p class="card-text">{{ EventDetails.description }}
@@ -120,37 +80,14 @@
                 </div>
               {% endfor %}
               <!-- card layout ends -->
-              </div>
-
- 
-          </div>
-        </div>
-      </div>
+            </div>
     </div>
-  </div>
 
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Copyright © 2023 <a href="#">DIY</a> EVENTS HUB
-        </div>
-      </div>
+
+  <footer style="position: relative; bottom: 0; width: 100%">
+    <div>
+      <p>Copyright © 2022 DIY EVENT HUB </p>
     </div>
   </footer>
-
-
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="{%static 'hub/js/jquery.min.js' %}"></script>
-  <script src="{%static 'hub/js/bootstrap.min.js' %}"></script>
-
-  <script src="{%static 'hub/js/isotope.min.js' %}"></script>
-  <script src="{%static 'hub/js/owl-carousel.js' %}"></script>
-
-  <script src="{%static 'hub/js/tabs.js' %}"></script>
-  <script src="{%static 'hub/js/popup.js' %}"></script>
-  <script src="{%static 'hub/js/custom.js' %}"></script>
-
   </body>
 </html>
