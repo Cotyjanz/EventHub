@@ -29,15 +29,33 @@ def DIY_index(request):
 
 # This is the view which handles urls for the event pages themselves
 def event_detail(request, primary_key):
-    # get_object_or_404 shortcut will display a 404 page if the object DNE
-    event = get_object_or_404(EventDetails, event_id=primary_key)
-    context = {
-    	'event' : event,
-    }
-    # event_page.html is the parent to all the potential templates which might
-    # be choosen by the user
-    page = 'hub/' + event.poster_layout + '.html'
-    return render(request, page, context)
+    if request.method == 'POST':
+        form = EventRSVPForm(request.POST)
+        rsvp_event = EventDetails.objects.get(event_id = primary_key)
+        if form.is_valid():
+            event_rsvp = form.save(commit=False)
+            rsvp_event.Is_rsvp += event_rsvp.Is_rsvp
+            rsvp_event.save()
+            return redirect('/')
+        else:
+            messages.error(request, 'Error Processing Your Request')
+            event = get_object_or_404(EventDetails, event_id=primary_key)
+        context = {
+            'event' : event,
+            }
+        page = 'hub/' + event.poster_layout + '.html'
+        return render(request, page, context)
+
+    if request.method == 'GET':
+        event = get_object_or_404(EventDetails, event_id=primary_key)
+        rsvp_form = EventRSVPForm(request.POST)
+        context = {
+            'event' : event,
+            'event_rsvp' : rsvp_form,
+            }
+        page = 'hub/' + event.poster_layout + '.html'
+        return render(request, page, context)
+
 
 
 def DIY_user_page(request):
