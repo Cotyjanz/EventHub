@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import redirect, render
 from django.urls import reverse
-from hub.forms import RegisterForm, EventDetailsForm
+from hub.forms import RegisterForm, EventDetailsForm, EventRSVPForm
 
 from django.contrib.sessions.models import Session
 from django.contrib.auth.forms import AuthenticationForm
