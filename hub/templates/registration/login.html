@@ -2,9 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign in & Sign up Form</title>
     {%load static%}
     <link rel="stylesheet" href="{%static 'hub/style.css' %}" />
@@ -22,10 +19,12 @@
                         {% csrf_token %}
                         <div class="login-form" >
                           <div class="Error_Msg">
+                            {% if request.POST%}
                                 {% if user.is_valid %}
                                 {% else %}
                                   <p>Invalid Credentials</p>
                                 {% endif %}
+                              {% endif %}
                           </div>
                             <div>
                                 <label class="login_labels">Username<br></label>
