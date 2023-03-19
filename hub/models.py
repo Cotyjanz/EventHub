@@ -22,7 +22,7 @@ class EventDetails(models.Model):
    date = models.DateField()
    time = models.TimeField()
    Is_public = models.BooleanField(null= False, default= False)
-   Is_rsvp = models.BooleanField(null=False, default= False)
+   Is_rsvp = models.IntegerField(default= 0, blank=True)
 
    
 
