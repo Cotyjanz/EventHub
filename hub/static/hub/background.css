@@ -1,9 +1,15 @@
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900");
 /* Webite Display CSS*/
+/*
+Code Reuse from:
+TemplateMo 577 Liberty Market
 
+https://templatemo.com/tm-577-liberty-market
+
+*/
 /*  Global Css  */
 
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900");
 body{
   margin: 0;
   padding: 0;
