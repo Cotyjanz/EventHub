@@ -3,38 +3,19 @@
   <head>
 
     {%load static%}
-    <meta charset="utf-8">
-    <meta name="author" content="templatemo">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
     <title>{{request.user.username}}'s' Page</title>
     <!-- Bootstrap css -->
-    <link href="{%static 'hub/bootstrap.min.css' %}" rel="stylesheet">
-
+    <link href="{%static 'hub/bootstrap.css' %}" rel="stylesheet">
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{%static 'hub/fontawesome.css' %}">
-    <link rel="stylesheet" href="{%static 'hub/templatemo-liberty-market.css' %}">
-    <link rel="stylesheet" href="{%static 'hub/owl.css' %}">
-    <link rel="stylesheet" href="{%static 'hub/animate.css' %}">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{%static 'hub/background.css' %}">
+    <link rel="stylesheet" href="{%static 'hub/carousel.css' %}">
 
   </head>
 
 <body>
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
@@ -65,25 +46,25 @@
   <!-- We list the user's own events here -->
   <div class="page-heading">
     <div class="featured-explore"> 
-      <div class="slider-header" style=" position:relative; right: 35%;" > <h1> Your Events</h1></div>
+      <div class="slider-header" style=" position:recenter;font-family: 'MV Boli';" > <h1> Your Events</h1></div>
       <br>
       <div class="container-fluid">
       
         <div class="row">
-          <div class="col-lg-12">
-            <div class="owl-features owl-carousel">
+          <div class="col-carousel">
+            <div class="slider-features slider-carousel">
 
               <!-- Cards for events that the user has created start here -->
               {% for EventDetails in userevents %}
               <div class="item">
-                 <div class="col-md-4">
+                 <div >
                   <div class="card mb-2">
-                    <img class="card-img-top" src="">
                     <div class="card-body">
-                      <h5 class="card-title">{{ EventDetails.title }}</h5>
+                      <h4 class="card-title">{{ EventDetails.title }}</h4>
                       <p class="card-text">{{ EventDetails.description }}
-                        <p>{{ EventDetails.date }} {{ EventDetails.time }}</p></p>
-   
+                        <p>{{ EventDetails.date }} {{ EventDetails.time }}</p>
+                      <h5>Guests Attending: {{EventDetails.Is_rsvp}}</h5></p>
+
                       <a href="{% url 'event_detail' EventDetails.event_id %}" class="btn btn-primary">View Now</a>
                     </div>
                   </div>
@@ -100,49 +81,42 @@
         <br> 
 
         <!-- We list other public events here -->
-        <div class="slider-header" style=" position:relative; right: 37%;" > <h1> Public Events:</h1></div>
+        <div class="slider-header" style=" position:center; font-family: 'MV Boli';" > <h1> Public Events:</h1></div>
         <br>
-        <div class="container-fluid">
+      <div class="container-fluid">
         
         <div class="row">
-          <div class="col-lg-12">
-            <div class="owl-features owl-carousel">
+          <div class="col-carousel">
+            <div class="slider-features slider-carousel">
 
               <!-- cards of the most recent public events start here -->
               {% for EventDetails in events %}
               <div class="item">
-                 <div class="col-md-4">
+                 <div >
                   <div class="card mb-2">
-                    <img class="card-img-top" src="">
                     <div class="card-body">
                       <h5 class="card-title">{{ EventDetails.title }}</h5>
                       <p class="card-text">{{ EventDetails.description }}
                         <p>{{ EventDetails.date }} {{ EventDetails.time }}</p></p>
-   
                       <a href="{% url 'event_detail' EventDetails.event_id %}" class="btn btn-primary">View Now</a>
                     </div>
                   </div>
                 </div>
               </div>
               {% endfor %}
-            
             </div>  
           </div>
         </div>
       </div> 
-    </div>  
-  </div>
-  
+  <footer style="position: relative; bottom: 0; width: 100%">
+    <div>
+      <p>Copyright © 2022 DIY EVENT HUB </p>
+    </div>
+  </footer>
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-  <script src="{%static 'hub/js/jquery.min.js' %}"></script>
-  <script src="{%static 'hub/js/bootstrap.min.js' %}"></script>
-
   <script src="{%static 'hub/js/isotope.min.js' %}"></script>
   <script src="{%static 'hub/js/owl-carousel.js' %}"></script>
-
-  <script src="{%static 'hub/js/tabs.js' %}"></script>
-  <script src="{%static 'hub/js/popup.js' %}"></script>
   <script src="{%static 'hub/js/custom.js' %}"></script>
 
  
