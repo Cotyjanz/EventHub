@@ -2,41 +2,20 @@
 <html lang="en">
 
   <head>
-    <meta charset="utf-8">
-    <meta name="author" content="templatemo">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
     <title>Create Event</title>
 
     <!-- Bootstrap core CSS -->
     {%load static%}
-    <link href="{%static 'hub/bootstrap.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{%static 'hub/style.css' %}" />
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{%static 'hub/fontawesome.css' %}">
-    <link rel="stylesheet" href="{%static 'hub/templatemo-liberty-market.css' %}">
-    <link rel="stylesheet" href="{%static 'hub/owl.css' %}">
-    <link rel="stylesheet" href="{%static 'hub/animate.css' %}">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="{%static '/hub/editorform.css'  %}">
+     <!-- Bootstrap css -->
+     <link href="{%static 'hub/bootstrap.css' %}" rel="stylesheet">
+     <link rel="stylesheet" href="{%static 'hub/background.css' %}">
+     
   </head>
 
 <body>
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
+  
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
@@ -50,10 +29,14 @@
                   <!-- ***** Logo End ***** -->
                   <!-- ***** Menu Start ***** -->
                   <ul class="nav">
-                    <!-- <li><a href="index.html" class="active">Home</a></li> -->
-                      <li><button><a href="/">Home </a></button></li>
-                      <li><button style="background-color: #aedb81;"><a href="#">Logged in as:{{request.user.username}}</a></button></li>
-                      <li><button><a href="{% url 'logout' %}">Logout</a></button></li>
+                    {%if request.user.username%}
+                    <li><button><a href="{% url 'login' %}">Dashboard</a></button></li>
+                    <li><button style="background-color: #aedb81;"><a href="#">Logged in as:{{request.user.username}}</a></button></li>
+                    <li><button><a href="{% url 'logout' %}">Logout</a></button></li>
+                    {%else%}
+                    <li><button><a href="{% url 'login' %}">Login</a></button></li>
+                    <li><button><a href="{% url 'register' %}">Register</a></button></li>
+                    {% endif %}
                   </ul>   
                   <!-- ***** Menu End ***** -->
               </nav>
@@ -70,36 +53,33 @@
 	  <br>
 <!-- This is a simple button for copying the event link to clipboard -->
 <!-- powered by sharebutton.sj -->
-    <button id="share_button">Share Event</button>
+    {% if request.user.username%}
+    <button id="share_button" style="height: 45px; font-size: large;" class="btn btn-primary">Share Event</button>
     <span id="confirm_message" style="display:none;">Copied to your clipboard, paste to share!</span>
     <br><br>
-     <footer style="position: absolute; bottom: 0; width: 100%">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Copyright © 2022 <a href="/DIY_index">DIY EVENT HUB </a>
-          <a title="DIY EVENT HUB" rel="sponsored" href="/DIY_index" target="_blank"></a></p>
-        </div>
+    {% else %}
+    <form class="poster-form" id="poster-form" style= "width:auto" method="POST">
+      {% csrf_token %}
+      <div class="user-box">
+        <h2 style="color: #FFD700">Will You be Attending?
+          {{event_rsvp.Is_rsvp}}
+          <button type="submit" style="height: 30px; font-size: small; border-radius: 20px" class="btn btn-primary">Send your confirmation</button>
+        </h2>
+        <br>
       </div>
-    </div>
-  </footer> 
+    </form>
+    {% endif %}
+    <footer style="position: relative; bottom: 0; width: 100%">
+      <div>
+        <p>Copyright © 2022 DIY EVENT HUB </p>
+      </div>
+    </footer> 
   </div>
 
 
   <!-- Scripts -->
   <!-- Share event page button -->
   <script src= "{%static 'hub/js/sharebutton.js' %}"></script>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="{%static 'hub/js/jquery.min.js' %}"></script>
-  <script src="{%static 'hub/js/bootstrap.min.js' %}"></script>
-
-  <script src="{%static 'hub/js/isotope.min.js' %}"></script>
-  <script src="{%static 'hub/js/owl-carousel.js' %}"></script>
-
-  <script src="{%static 'hub/js/tabs.js' %}"></script>
-  <script src="{%static 'hub/js/popup.js' %}"></script>
-  <script src="{%static 'hub/js/custom.js' %}"></script>
 </html>
 
 
