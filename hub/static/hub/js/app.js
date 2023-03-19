@@ -1,3 +1,5 @@
+/* JS file for login and signup html pages*/
+/* JS for toggle functionality */
 const inputs = document.querySelectorAll(".input-field");
 const toggle_btn = document.querySelectorAll(".toggle");
 const main = document.querySelector("main");
