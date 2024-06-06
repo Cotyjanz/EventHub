@@ -4,7 +4,7 @@ A website for posting and sharing upcoming events with your friends.
 
 ## Description
 
-This is an educational project meant to be an exercise in the development of large applications and project management.
+This is an educational project meant to be an exercise in the development of web applications and project management.
 
 ## Getting Started
 
